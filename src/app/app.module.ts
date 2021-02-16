@@ -6,13 +6,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ExercicioContadorComponent } from './exercicio-contador/exercicio-contador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ExercicioContadorComponent
   ],
   imports: [
     BrowserModule,

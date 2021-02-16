@@ -6,6 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'Seja Bem Vindo!';
 
-  constructor() { }
+  constructor() { 
+    setTimeout(() => {
+      this.title = 'Sinta-se à vontade';
+    }, 5000);
+  }
+
+  onValorAtualizadoNoContador(novoValor){
+    console.log('onValorAtualizadoNoContador', novoValor);
+  }
+  
 }
