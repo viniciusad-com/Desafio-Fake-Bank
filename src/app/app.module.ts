@@ -1,12 +1,14 @@
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ExercicioContadorComponent } from './exercicio-contador/exercicio-contador.component';
+import { HomeComponent } from './home/home.component';
+import { ExercicioContadorComponent } from './shared/exercicio-contador/exercicio-contador.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { LoginComponent } from './login/login.component';
+import { ExtratoComponent } from './extrato/extrato.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ExercicioContadorComponent } from './exercicio-contador/exercicio-conta
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ExercicioContadorComponent
+    ExercicioContadorComponent,
+    LoginComponent,
+    ExtratoComponent
   ],
   imports: [
     BrowserModule,
