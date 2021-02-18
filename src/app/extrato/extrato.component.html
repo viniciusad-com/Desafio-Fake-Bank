@@ -1,1 +1,18 @@
-<p>extrato works!</p>
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Description </th>
+            <th> Price </th>
+            <th> Available </th>
+        </tr>
+        <tr *ngFor="let transacao of transacoes">
+            <td>{{ transacao.id }}</td>
+            <td>{{ transacao.name }}</td>
+            <td>{{ transacao.description }}</td>
+            <td>{{ transacao.price }}</td>
+            <td>{{ transacao.available }}</td>
+        </tr>
+    </table>
+</div>

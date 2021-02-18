@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ExtratoService } from './extrato.service';
+
 @Component({
   selector: 'app-extrato',
   templateUrl: './extrato.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtratoComponent implements OnInit {
 
-  constructor() { }
+  transacoes = [];
+  
+  constructor(
+    private extratoService: ExtratoService
+  ) { 
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.transacoes = this.extratoService.getTransacoes();
   }
 
 }
