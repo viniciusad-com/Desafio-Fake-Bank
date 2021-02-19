@@ -1,35 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+import { Transacao } from './extrato.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExtratoService {
 
-  constructor() { }
+  API_URL = environment.API_URL;
 
-  getTransacoes(){
-    return [
-      {
-        id:1,
-        name: 'Jaleco',
-        description:'Jaleco de alta qualidade fabricado para atender aos clientes mais exigentes',
-        price:'R$ 999,99',
-        available:true,
-     },
-     {
-        id:2,
-        name:'Avental',
-        description:'Jaleco de alta qualidade fabricado para atender aos clientes mais exigentes',
-        price:'R$ 999,99',
-        available:true,
-     },
-     {
-        id:3,
-        name:'Touca',
-        description:'Jaleco de alta qualidade fabricado para atender aos clientes mais exigentes',
-        price:'R$ 999,99',
-        available:true,
-     },
-    ];
+  constructor(
+    private http: HttpClient,
+  ) { }
+
+  getTransacoes() {
+    return this.http.get<Transacao[]>(`${this.API_URL}/transacoes`);
+    //return throwError(new Error('Erro generico'));
   }
 }
