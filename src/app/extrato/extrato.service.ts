@@ -15,8 +15,17 @@ export class ExtratoService {
     private http: HttpClient,
   ) { }
 
-  getTransacoes() {
-    return this.http.get<Transacao[]>(`${this.API_URL}/transacoes`);
+  getTransacoes(page: number) {
+    /* const error = throwError('Erro genérico');
+    return timer(3000)
+      .pipe(
+        mergeMap(() => error)
+      ); */
+    return this.http.get<Transacao[]>(`${this.API_URL}/transacoes`, {
+      params: {
+        _page: String(page),
+      }
+    });
     //return throwError(new Error('Erro generico'));
   }
 }

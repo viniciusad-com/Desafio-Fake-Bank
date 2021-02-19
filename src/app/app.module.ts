@@ -8,6 +8,7 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
+import { ContatosComponent } from './contatos/contatos.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     LoginComponent,
     ExtratoComponent,
+    ContatosComponent,
   ],
   imports: [
     BrowserModule,
