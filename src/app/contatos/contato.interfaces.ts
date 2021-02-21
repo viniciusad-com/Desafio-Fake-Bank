@@ -3,6 +3,6 @@ export interface Contato {
     nome: string;
     cpf: string;
     banco: string;
-    ag: number;
-    cc: number;
+    ag: string;
+    cc: string;
 }

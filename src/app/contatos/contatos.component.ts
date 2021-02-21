@@ -62,6 +62,7 @@ export class ContatosComponent implements OnInit {
   }
 
   onError(error: any){
-    
+    this.erroNoCarregamento = true;
+    console.error(error);
   }
 }
