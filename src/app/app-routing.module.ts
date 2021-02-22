@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CountryListDetailComponent } from './country-list/country-list-detail/country-list-detail.component';
-import { CountryListComponent } from './country-list/country-list.component';
+import { DashComponent } from './dash/dash.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -15,10 +16,13 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent}, {
     path: 'home',
-    component: CountryListComponent,
+    component: HomeComponent,
   }, {
-    path: 'home/:country',
-    component: CountryListDetailComponent
+    path: 'home/recovery-pass',
+    component: RecoveryPassComponent
+  }, {
+    path: 'home/dashboard',
+    component: DashComponent,
   }, {
     path: '**',
     component: PageNotFoundComponent
