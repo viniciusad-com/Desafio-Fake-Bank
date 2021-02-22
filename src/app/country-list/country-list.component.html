@@ -1,0 +1,46 @@
+<body class="pb-5">
+    <h3 class="text-center p-2"> Situação Covid por País </h3>
+
+    <div class="container text-center">
+        <div *ngIf="isLoading && !isError" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div *ngIf="isError">
+            <h2>Deu erro :(</h2>
+            <button class="btn btn-success mt-3" (click)="loadList()">Tentar Novamente</button>
+        </div>
+        <div class="p-3" *ngIf="!isLoading && !isError">
+            <div class="row justify-content-between">
+                <!-- <button class="btn btn-primary" (click)="previousPage()" [disabled]="page === 1">Página anterior</button>
+                <button class="btn btn-primary" (click)="nextPage()">Próxima página</button> -->
+            </div>
+            <table class="table table-secondary">
+                <tr>
+                    <th> País </th>
+                    <th> Infectados </th>
+                    <!-- <th> Testados </th>
+                    <th> Recuperados </th> -->
+                    <th> Fatalidades </th>
+                    <!-- <th> Fonte </th>
+                    <th> Atualização </th> -->
+                </tr>
+                <tr *ngFor="let country of countryList">
+                    <td>{{ country.country }}</td>
+                    <td>{{ country.infected | number:'1.0-0'}}</td>
+                    <!-- <td>{{ country.tested | number:'1.0-0'}}</td>
+                    <td>{{ country.recovered | number:'1.0-0'}}</td> -->
+                    <td>{{ country.deceased | number:'1.0-0'}}</td>
+                    <!-- <td>{{ country.sourceUrl }}</td>
+                    <td>{{ country.lastUpdatedApify | date: "dd/MM/yyyy"}}</td> -->
+                    <td>
+                        <button 
+                        class="btn btn-secondary"
+                        (click)="onCountryListDetails(country)">
+                            Ver detalhes
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>

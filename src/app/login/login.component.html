@@ -1,0 +1,46 @@
+<body cz-shortcut-listen="true" class="pb-5">
+    <div class="container flex-center">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin p-4">
+            <div class="text-center mb-4">
+                <img class="mb-4" src="https://image.flaticon.com/icons/png/512/295/295128.png" alt="" width="72"
+                    height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
+                <p></p>
+            </div>
+            <div class="form-label-group">
+                <label for="inputEmail">Email</label>
+                <input 
+                type="email" 
+                id="inputEmail" 
+                class="form-control" 
+                name="email" 
+                placeholder="Email address"
+                [(ngModel)]="email" 
+                required 
+                email 
+                [class.is-invalid]="exibeErro('email', form)">
+                <div *ngIf="exibeErro('email', form)" class="invalid-feedback"> E-mail inválido. </div>
+            </div>
+            <div class="form-label-group mt-3">
+                <label for="inputPassword">Senha</label>
+                <input 
+                type="password" 
+                id="inputPassword" 
+                class="form-control" 
+                placeholder="Password"
+                name="password"
+                [(ngModel)]="password" 
+                required 
+                [class.is-invalid]="exibeErro('password', form)">
+                <div *ngIf="exibeErro('password', form)" class="invalid-feedback"> Senha inválida. </div>
+            </div>
+            <div class="checkbox mb-3 mt-1">
+                <label>
+                    <input type="checkbox" value="remember-me"> Lembrar login
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted text-center">HelloWorld© 2021</p>
+        </form>
+    </div>
+</body>

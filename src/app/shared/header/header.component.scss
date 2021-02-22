@@ -1,0 +1,36 @@
+.header {
+  text-align: center;
+  padding: 0;
+  background-color: #d6e3f8;
+  &__title {
+    color: #191308;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .nav-bar-list {
+    background-color: #61707d;
+    padding: 5px 0;
+    width: 100%;
+    li {
+      display: inline;
+      font-size: 1.4rem;
+      font-weight: 500;
+      a {
+        display: inline-block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #191308;
+      }
+      .active {
+        background-color: #d6e3f8;
+        color: #191308;
+        padding: 2px 10px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
