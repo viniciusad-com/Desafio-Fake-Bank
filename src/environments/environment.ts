@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
+  FAKE_BANK_API_URL: 'accenture-java-desafio.herokuapp.com/',
   COVID_API_URL: 'https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true',
-  LOGIN_API_URL: 'teste/teste.com.br'
+  LOGIN_API_URL: 'teste/teste.com.br',
 };
 
 

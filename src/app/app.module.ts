@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
+import { DashComponent } from './dash/dash.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -26,6 +29,9 @@ registerLocaleData(localePt, 'pt');
     CountryListDetailComponent,
     PageNotFoundComponent,
     FooterComponent,
+    HomeComponent,
+    RecoveryPassComponent,
+    DashComponent,
   ],
   imports: [
     BrowserModule,

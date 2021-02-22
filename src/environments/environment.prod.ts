@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  FAKE_BANK_API_URL: 'accenture-java-desafio.herokuapp.com/',
 };
