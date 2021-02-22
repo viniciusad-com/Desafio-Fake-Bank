@@ -6,6 +6,7 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EstaLogadoGuard } from './shared/guards/esta-logado.guard';
+import { NaoEstaLogadoGuard } from './shared/guards/nao-esta-logado.guard';
 
 
 
@@ -14,15 +15,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [EstaLogadoGuard],
+    canActivate: [NaoEstaLogadoGuard],
   },
   {
     path: '',
     component: HomeComponent,
+    canActivate: [EstaLogadoGuard],
   },
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [EstaLogadoGuard],
   },
   {
     path: 'extrato',
