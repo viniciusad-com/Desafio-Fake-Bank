@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs/internal/operators/take';
-import { Login } from '../login.interface';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { AuthService } from '../shared/services/auth/auth.service';
 
 @Component({
@@ -11,31 +12,27 @@ import { AuthService } from '../shared/services/auth/auth.service';
 
 export class HomeComponent implements OnInit {
 
-  login: Login = {
-    senha: '123456',
-    usuario: 'helloWorld',
-  }
+  registerForm: FormGroup;
+ 
+  isLoading: boolean;
+  registerError: boolean
 
   constructor(
-    private auth: AuthService,
+    private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit(): void {
-    this.initialLogin();
- }
-  initialLogin() {
-    this.auth.postLogin(this.login)
-    .pipe(
-      take(1),
-    ).subscribe(
-        (response) => { this.onSuccess(response) },
-        (error) => { this.onError(error) }
-      )
+
+    this.registerForm = this.formBuilder.group({
+      cpf: [""],
+      nomeUsuario: [""],
+      nome: [""],
+      senha: [""],
+      confirmarSenha: [""]
+    })
   }
-  onSuccess(response: any) {
-    console.log(response)
-  }
-  onError(error: any) {
-      console.log(error);
+
+  registerUser() {
+    console.log(this.registerForm);
   }
 }

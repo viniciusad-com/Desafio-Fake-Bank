@@ -1,5 +1,9 @@
 export interface Usuario {
+    id: number,
+    cpf: string,
     nome: string,
-    sobrenome: string,
-    email: string,
+    login: string,
+    senha: string,
+    senhaTemporaria: null,
+    redefinirSenha: boolean
 } 

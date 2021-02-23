@@ -1,9 +1,9 @@
 export interface Usuario {
-    cpf: string,
     id: number,
-    login: string,
+    cpf: string,
     nome: string,
-    redefinirSenha: boolean,
+    login: string,
     senha: string,
     senhaTemporaria: string,
+    redefinirSenha: boolean,
 }

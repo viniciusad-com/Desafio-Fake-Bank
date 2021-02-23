@@ -1,62 +1,57 @@
-<<<<<<< HEAD
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
-import { AuthService } from '../shared/services/auth/auth.service';
-=======
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
-
 import { AuthService } from './../shared/services/auth/auth.service';
-import { LoginResponse } from './login.interfaces';
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
+import { LoginResponse } from '../loginResponse.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-<<<<<<< HEAD
-  LOGIN_API_URL = environment.LOGIN_API_URL
-  
-  constructor(
-    private http: HttpClient,
-    private auth: AuthService) { }
-
-  // checkLogin() {
-
-  //   .pipe(
-  //     tap(response => { this.auth.setUser(response.token) })
-  //   )
-  //   return of({})
-  //   //  return this.http.post<Country[]>(this.LOGIN_API_URL)
-  // }
-=======
   constructor(
     private authService: AuthService,
   ) { }
 
-  logar(email: string, senha: string): Observable<LoginResponse> {
+  logar(usuario: string, senha: string): Observable<LoginResponse> {
     /* return this.http.post(`${this.API_URL}/auth`, {contato, this.httpoptions}) */
-    if (email === 'melo.wesley53@gmail.com' && senha === '123') {
+    if (usuario === 'helloWorld' && senha === '123456') {
       return of({
         usuario: {
-          nome: 'Wesley',
-          sobrenome: 'Melo',
-          email: 'melo.wesley53@gmail.com',
+          id: 393,
+          cpf: "11255647898",
+          nome: 'Hello World',
+          login: "helloWorld",
+          senha: "123456",
+          senhaTemporaria: null,
+          redefinirSenha: false
         },
-        token: 'fea79d1eb154758239cc1fa740a7575999be856b2fc2a2ca3a542a0496131073',
+        conta: {
+          id: 761,
+          numero: "helloWorld",
+          saldo: 0.0,
+          tipo: "CC",
+          descricao: "CONTA CREDITO"
+        },
+        contaCredito: {
+          id: 760,
+          numero: "helloWorld",
+          saldo: 2700.0,
+          tipo: "CB",
+          descricao: "CONTA BANCO"
+        },
+        token: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb1dvcmxkIiwiaWRVc3VhcmlvIjozOTMsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MTQwOTY3MjIsImV4cCI6MTYxNDEwMDMyMn0.TMna755wZXM8urD19iAhRdN6i063GwEtno5iNwvKUuovy3xG7393daVxPxB_0upYxrWodbnwPstMCkqwSbNDAA',
+        dataInicio: "2021-02-23T16:12:02.692+00:00",
+        dataFim: "2021-02-23T17:12:02.692+00:00"
       }).pipe(
-        delay(5000),
+        delay(2000),
         tap(response => {
-            this.authService.setUsuario(response.usuario);
+            this.authService.setUser(response.usuario);
             this.authService.setToken(response.token);
         })
       );
     }
-    return throwError('Usuário ou senha incorreto.');
+    return throwError('Usuário ou senha incorretos.');
   }
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
 }
