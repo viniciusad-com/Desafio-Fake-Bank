@@ -1,6 +1,14 @@
-import { ContaDto } from './contaDto.interface';
+import { Lancamento } from './lancamento.interface';
 
 export interface Dashboard {
-    contaBanco: ContaDto,
-    contaCredito: ContaDto,
+    contaBanco: {
+        id: number,
+        lancamentos: Lancamento[],
+        saldo: number
+    },
+    contaCredito: {
+        id: number,
+        lancamentos: Lancamento[],
+        saldo: number
+    },
 }

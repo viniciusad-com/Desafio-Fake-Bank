@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'home/recovery-pass',
     component: RecoveryPassComponent
   }, {
-    path: 'home/dashboard',
+    path: 'dashboard',
     component: DashComponent,
   }, {
     path: '**',
