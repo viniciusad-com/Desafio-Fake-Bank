@@ -8,9 +8,12 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+<<<<<<< HEAD
 [*.ts]
 quote_type = single
 
+=======
+>>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
