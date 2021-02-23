@@ -8,6 +8,7 @@ import { AuthService } from '../shared/services/auth/auth.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
   login: Login = {
@@ -37,5 +38,4 @@ export class HomeComponent implements OnInit {
   onError(error: any) {
       console.log(error);
   }
-
 }

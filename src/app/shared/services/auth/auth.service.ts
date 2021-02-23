@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Login } from 'src/app/login.interface';
 import { Usuario } from 'src/app/usuario.interface';
 import { environment } from 'src/environments/environment';
+import { Usuario } from './../../interfaces/usuario.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +75,11 @@ export class AuthService {
   postLogin(login: Login) {
     return this.httpClient.post<Login>(this.FAKE_BANK_API_URL + '/login', login);
   }
- 
+
 }
+
+  estaLogado(): boolean {
+    return this.getUsuario() && this.getToken() ? true : false;
+  }
+}
+

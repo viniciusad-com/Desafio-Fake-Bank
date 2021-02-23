@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body cz-shortcut-listen="true" class="pb-5">
     <div class="container flex-center">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin p-4">
@@ -44,3 +45,41 @@
         </form>
     </div>
 </body>
+=======
+<div class="text-center">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">  
+        <div class="p-2">
+            <input 
+            type="email" 
+            class="form-control" 
+            placeholder="Email" 
+            name="email" 
+            [(ngModel)]="email"
+            email
+            required
+            [class.is-invalid]="exibeErro('email', form)"
+            >
+            <div *ngIf="exibeErro('email', form)" class="invalid-feedback"> E-mail inválido. </div>
+        </div>
+
+        <div class="p-2">
+            <input 
+            type="password" 
+            class="form-control" 
+            placeholder="Password" 
+            name="password" 
+            [(ngModel)]="password"
+            required
+            [class.is-invalid]="exibeErro('password', form)"
+            >
+            <div *ngIf="exibeErro('password', form)" class="invalid-feedback"> Senha inválida. </div>
+        </div>
+
+        <div class="p-2">
+            <button class="brn btn-lg btn-primary btn-block" type="submit"> Entrar </button>
+        </div>
+    </form>
+
+</div>
+
+>>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
