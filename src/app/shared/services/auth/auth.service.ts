@@ -1,84 +1,85 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-<<<<<<< HEAD
-=======
+import { Login } from 'src/app/login.interface';
+import { Usuario } from 'src/app/usuario.interface';
+import { environment } from 'src/environments/environment';
 import { Usuario } from './../../interfaces/usuario.interface';
 
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-<<<<<<< HEAD
   token: any;
+  usuario: any;
+
+  FAKE_BANK_API_URL = environment.FAKE_BANK_API_URL;
+
+  login: Login = {
+    senha: '123456',
+    usuario: 'helloWorld',
+  }
+
+  fixeds = {
+    senha: '',
+    usuario: '',
+  } ;
   
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
 
-  setUser(usuario: any) {
+  setUser(usuario: Usuario) {
+    this.usuario = usuario;
     localStorage.setItem('token', JSON.stringify(''));
   }
 
   getUser() {
-    if (this.token) {
-      return this.token;
-    }
-    
-    const loggedUser = localStorage.getItem('token');
-    if (loggedUser) {
-      this.token = JSON.parse(loggedUser);
-=======
-  usuario: Usuario;
-  token: string;
-
-  constructor() { }
-
-  setUsuario(usuario: Usuario) {
-    this.usuario = usuario;
-    localStorage.setItem('usuario', JSON.stringify(usuario));
-  }
-
-  getUsuario() {
     if (this.usuario) {
       return this.usuario;
     }
-
-    const usuarioGuardado = localStorage.getItem('usuario');
-    if (usuarioGuardado) {
-      this.usuario = JSON.parse(usuarioGuardado);
-      return this.usuario;
+        
+    const loggedUser = localStorage.getItem('token');
+    if (loggedUser) {
+      this.token = JSON.parse(loggedUser);
+      return this.token;
     }
 
     return null;
-  }
-
-  setToken(token: string) {
-    this.token = token;
-    localStorage.setItem('token', token);
   }
 
   getToken() {
-    if (this.token) {
+    if(this.token) {
       return this.token;
     }
 
-    const tokenGuardado = localStorage.getItem('token');
-    if (tokenGuardado) {
-      this.token = tokenGuardado;
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
+    const savedToken = localStorage.getItem('token');
+    if(savedToken) {
+      this.token = savedToken;
       return this.token;
     }
 
     return null;
   }
-<<<<<<< HEAD
- 
+
+  estaLogado(): boolean {
+    //return this.getUsuario() && this.getToken.Token() ? true : false;
+    if (this.getUser() && this.getToken()) {
+      return true;
+    }
+    return false;
+  }
+
+  postLogin(login: Login) {
+    return this.httpClient.post<Login>(this.FAKE_BANK_API_URL + '/login', login);
+  }
+
 }
-=======
 
   estaLogado(): boolean {
     return this.getUsuario() && this.getToken() ? true : false;
   }
 }
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
+

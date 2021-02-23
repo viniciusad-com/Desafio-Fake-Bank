@@ -1,34 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs/internal/operators/take';
+import { Login } from '../login.interface';
+import { AuthService } from '../shared/services/auth/auth.service';
 
-<<<<<<< HEAD
-=======
-import { AuthService } from './../shared/services/auth/auth.service';
-
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
+  login: Login = {
+    senha: '123456',
+    usuario: 'helloWorld',
+  }
+
+  constructor(
+    private auth: AuthService,
+  ) { }
 
   ngOnInit(): void {
+    this.initialLogin();
+ }
+  initialLogin() {
+    this.auth.postLogin(this.login)
+    .pipe(
+      take(1),
+    ).subscribe(
+        (response) => { this.onSuccess(response) },
+        (error) => { this.onError(error) }
+      )
   }
-
+  onSuccess(response: any) {
+    console.log(response)
+  }
+  onError(error: any) {
+      console.log(error);
+  }
 }
-=======
-  usuario: any;
-  
-  constructor(
-    private authService: AuthService,
-  ){
-
-  }
-  ngOnInit() {
-    this.usuario = this.authService.getUsuario();
-  }
-}
->>>>>>> 9b92f9701c05f28fe5e8d2ecce23d924783b6a8c
