@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Sessao } from 'src/app/sessao.interface';
 import { Usuario } from 'src/app/usuario.interface';
 import { environment } from 'src/environments/environment';
 
@@ -13,6 +14,7 @@ export class AuthService {
 
   user!: Usuario;
   token!: string;
+  session!: Sessao;
 
   
   constructor(
@@ -20,18 +22,30 @@ export class AuthService {
     private router: Router) { }
 
 
+  setSession(session: Sessao) {
+    this.session = session
+    localStorage.setItem('session', JSON.stringify(session));
+  }
 
+  getSession() {
+    if (this.session) {
+      return this.session;
+    }
+    
+    const sessionLocale = localStorage.getItem('session')
+    if (sessionLocale) {
+      this.session = JSON.parse(sessionLocale);
+      return this.session;
+    }
+
+    return null;
+  }
+    
   setUser(user: Usuario) {
     this.user = user
     localStorage.setItem('user', JSON.stringify(user));
   }
   
-  
-  setToken(token: string) {
-    this.token = token;
-    localStorage.setItem('token', token);
-  }
-
   getUser() {
     if (this.user) {
       return this.user;
@@ -44,6 +58,11 @@ export class AuthService {
     }
 
     return null;
+  }
+  
+  setToken(token: string) {
+    this.token = token;
+    localStorage.setItem('token', token);
   }
 
   getToken() {
@@ -59,6 +78,7 @@ export class AuthService {
 
     return null;
   }
+
 
   isLogged() {
     return this.getUser() && this.getToken ? true : false;

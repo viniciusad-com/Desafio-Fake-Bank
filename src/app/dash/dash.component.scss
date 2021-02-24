@@ -1,0 +1,51 @@
+.conta-card {
+    width: 407.8px;
+    height: 255.05px;
+
+    background: #FBFBFB;
+    border-radius: 8px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #68DE5A;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px;
+  }
+
+  .welcome-text {
+    margin-top: 30px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 25px;
+  }
+
+  .sidenav div {
+      width: 70%;
+      height: 90px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      background-color: #8C52E5;
+      border-radius: 5px;
+      align-items: flex-end;
+      display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  .sidenav a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    margin-left: 150px;
+  }

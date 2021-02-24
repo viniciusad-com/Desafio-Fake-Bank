@@ -1,34 +1,46 @@
 <body>
-    <div class="rectangle2 bg-happy">
-        <div class="row m-0">
-            <div class="col">
-                <div class="logo p-5">
-                    <a href="./fake-bank-home.html">
-                        <img class="" src="../assets/logo-gama-academy-horizontal.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row m-0">
-                <div class="col-6">
-                    <div class="request-card-box m-0">
-                        <form [formGroup]="loginForm" class="form-group col-0" method="POST">
-                            <p class="pl-2 pr-4 pb-4">Faça seu login</p>
-                            <input formControlName = "usuario" class="input-cadastro" placeholder="Digite seu usuário" type="text" name="user" id="input-cadastro" required="">
-                            <input formControlName = "senha" class="input-cadastro" placeholder="Digite sua senha" type="text" name="password" id="input-cadastro" required="">
-                            <div class="col-12">
-                                <button (click)="onSubmit()"class="btn-acessar" href="./fake-bank-home.html">
-                                    <p class="pl-3 m-0">Continuar</p>
-                                    <img class="float-right pr-3" src="../assets/right-arrow.png">
-                                </button>
-                            </div>
-                            <a href=""> Esqueci minha senha > </a>
-                            <a href=""> Ainda não sou cliente > </a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> 
+    <div class="p-5">
+        <a href="./fake-bank-home.html">
+            <img class="" src="../assets/logo-gama-academy-horizontal.png">
+        </a>
     </div>
+
+    <div class="card login-card mx-auto">
+        
+        <div class="card-body">
+            <h5 class="card-title text-center">Faça seu login</h5>
+            
+            <form [formGroup]="loginForm" 
+                class="form-group col-0 p-3" 
+                method="POST">
+                <input formControlName = "usuario" 
+                    class="login-input m-1" 
+                    placeholder="Digite seu usuário" 
+                    type="text" 
+                    name="user" 
+                    required="">
+                <input formControlName = "senha" 
+                    class="login-input m-1" 
+                    placeholder="Digite sua senha" 
+                    type="text" name="password" 
+                    required="">
+                <div class="p-3">
+                    <button (click)="onSubmit()"
+                        class="btn-continuar" 
+                        href="./fake-bank-home.html">
+                        <p class="pl-3 m-0">Continuar</p>
+                        <img class="float-right pr-3" src="">
+                    </button>
+                </div>
+
+                <div>
+                    <a class="m-3" (click)="onRecoveryPass()" href="/recovery-pass"> Esqueci minha senha > </a> <br>
+                    <a class="p-3" (click)="onSignUp()" href=""> Ainda não sou cliente > </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
+
+

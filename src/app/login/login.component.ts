@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    // this.checkLogin()
   }
 
 
@@ -62,15 +61,9 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  exibeErro(nomeControle: string, form: NgForm) {
-    if (!form.controls[nomeControle]) {
-      return false;
-    }
-    return form.controls[nomeControle].invalid && form.controls[nomeControle].touched;
-  }
-
-    onSuccess(response: Sessao) {
+  onSuccess(response: Sessao) {
     console.log(response)
+    this.authService.setSession(response)
      this.authService.setToken(response.token)
      this.isError = false;
 
@@ -79,12 +72,12 @@ export class LoginComponent implements OnInit {
      this.router.navigate(['dashboard']);
    }
 
-   onError(error: any) {
+    onError(error: any) {
      this.isError = true;
      console.log(error);
    } 
 
-   checkLogin() {
+  checkLogin() {
     this.isLoading = true;
     this.isError = false;
     this.loginService.logged(this.loginForm.value)
@@ -98,6 +91,15 @@ export class LoginComponent implements OnInit {
       )
   }
 
+
+  onRecoveryPass() {
+    this.router.navigate(['recovery-pass']);
+  }
+  
+  onSignUp() {
+    this.router.navigate(['home']);
+  }
+  
 
 
 }

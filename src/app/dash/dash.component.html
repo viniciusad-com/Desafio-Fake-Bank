@@ -1,1 +1,53 @@
-<p>dash works!</p>
+<div class="sidenav">
+    <div>
+        <a href="#">Depósitos</a>
+    </div>
+    <div>
+        <a href="#">Planos</a>
+    </div>
+    <div>
+        <a href="#">Pagamentos</a>
+    </div>
+    <div>
+        <a href="#">Transações</a>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="welcome-text">
+        <p> Olá {{ session.usuario.nome }}, seja bem vindo! </p>
+    </div>
+    
+    <div class="card-group">
+        <div class="card conta-card m-5">
+            <div class="card-body">
+                <p> Conta </p>
+                <p> Saldo disponível </p>
+                <p> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </p>
+                <a> Transações </a>
+                <p> {{ dashboard.contaBanco.lancamentos }} </p>
+            </div>
+        </div>
+        
+        <div class="card conta-card m-5">
+            <div class="card-body">
+                <p> Conta Crédito </p>
+                <p> Saldo disponível </p>
+                <p> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </p>
+                <a> Transações </a>
+                <p> {{ dashboard.contaCredito.lancamentos }} </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card transacoes-card m-5">
+        <div class="card-body">
+            <p> Últimos lançamentos </p>
+            <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
+                <p> {{ lancamento.descricao  }} </p>
+                <p> {{ lancamento.conta  }} </p>
+                <p> {{ lancamento.valor  }} </p>
+            </div>
+        </div>
+    </div>
+  </div>

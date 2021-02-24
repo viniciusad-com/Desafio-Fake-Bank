@@ -61,9 +61,34 @@ body {
   transition: background-color 1000ms linear;
 }
 .btn-acessar[disabled] {
-  background-color: #d8d8d8;
+  background-color: #68DE5A;
   color: #9b9b9b;
 }
+
+.btn-continuar {
+  width: 261px;
+  height: 42px;
+  border-radius: 20px;
+  background-color:#68DE5A;
+  color: #8c52e5;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+}
+.btn-continuar:hover {
+  background-color: #68de5a;
+  transition: background-color 1000ms linear;
+}
+.btn-continuar[disabled] {
+  background-color: #D8D8D8;
+  color: #9B9B9B;
+}
+
+
 .request-card-box {
   background-color: #fff;
   font-size: 12px;
