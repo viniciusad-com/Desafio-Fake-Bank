@@ -1,0 +1,68 @@
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font: 400 1rem "Roboto", sans-serif;
+
+  background: #EAEAEA;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-black {
+  width: 47.5%;
+  height: 90%;
+  background: #000;
+
+  color: rgba(104, 222, 90, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-black h3 {
+  font-size: 2.125rem;
+}
+
+.background-black img {
+  padding: 20px 0;
+}
+
+.background-black p {
+  font-size: 1.3125rem;
+
+  width: 50%;
+}
+
+.background-white {
+  width: 47.5%;
+  height: 90%;
+  background: #f8f8f8;
+
+  color: rgba(29, 29, 29, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-white h3 {
+  font-size: 2.125rem;
+}
+
+.background-white img {
+  padding: 20px 0;
+
+  height: 533px;
+}
+
+.background-white p {
+  font-size: 1.3125rem;
+
+  width: 50%;
+}

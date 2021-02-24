@@ -1,63 +1,74 @@
 <body>
-    <div class="rectangle2 bg-happy">
-        <div class="row m-0">
-            <div class="col">
-                <div class="logo p-5">
-                    <a href="./fake-bank-home.html">
-                        <img class="" src="../assets/logo-gama-academy-horizontal.png">
-                    </a>
-                </div>
-            </div>
+    <div class="logo p-5">
+      <a href="./fake-bank-home.html">
+        <img src="../assets/logo-gama-academy-horizontal.png">
+      </a>
+    </div>
+
+    <div class="access-container">
+      <div class="txt-home">
+        <p>Fake Bank é um projeto de nossos alunos.</p>
+        <p>Já tem conta?</p>
+        <button 
+            class="btn-acessar" 
+            href="./fake-bank-home.html"
+            (click)="onSignIn()">
+            <p class="pl-3 m-0">Acessar</p>
+            <img class="pr-3" src="../../assets/arrow-accesso.svg">
+        </button>
+    </div>
+
+      <div class="request-card-box">
+          <form [formGroup]="signInForm" 
+            class="form-group col-0 p-3" 
+            method="POST"
+          >
+            <p>Peça sua conta e cartão de crédito do Gama Bank</p>
+            <input
+              formControlName= "cpf" 
+              class="input-cadastro" 
+              placeholder="Digite seu CPF" 
+              type="number" 
+              required
+            >
+            <input 
+              formControlName= "usuario"
+              class="input-cadastro" 
+              placeholder="Escolha um nome de usuário"
+              type="text" 
+              required
+            >
+            <input 
+              formControlName= "nome" 
+              class="input-cadastro"
+              placeholder="Digite seu nome completo" 
+              type="text" 
+              required
+            >
+            <input 
+              formControlName= "senha" 
+              class="input-cadastro" 
+              placeholder="Digite sua senha" 
+              type="password" 
+              name="password"
+              required
+            >
+            <input 
+              formControlName= "confirmacao-senha"
+              class="input-cadastro"
+              placeholder="Confirme sua senha"
+              type="password"
+              name="password"
+              required
+            >
+            <button 
+              (click)="onSubmit()"
+              class="btn-continuar"
+            >
+              <p class="pl-3 m-0">Continuar</p>
+              <img src="../../assets/arrow-accesso-grey.svg">
+            </button>
+          </form>
         </div>
-        <div class="container">
-            <div class="row m-0">
-                <div class="acessar col-6">
-                    <div class="txt-home">
-                        <p>Fake Bank é um projeto de nossos alunos.</p>
-                        <p>Já tem conta?</p>
-                        <button 
-                            class="btn-acessar" 
-                            href="./fake-bank-home.html"
-                            (click)="onSignIn()">
-                            <p class="pl-3 m-0">Acessar</p>
-                            <img class="pr-3" src="../assets/right-arrow.png">
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="col-6">
-                    <div class="request-card-box m-0">
-                        <form [formGroup]="signInForm" 
-                class="form-group col-0 p-3" 
-                method="POST">
-                <input formControlName = "cpf" class="input-cadastro" placeholder="Digite seu CPF" type="number" required>
-                <input formControlName = "usuario" class="input-cadastro" placeholder="Escolha um nome de usuário" type="text" required>
-                <input formControlName = "nome" class="input-cadastro" placeholder="Digite seu nome completo" type="text" required>
-                <input formControlName = "senha" class="input-cadastro" placeholder="Digite sua senha" type="password" name="password" required>
-                <input formControlName = "confirmacao-senha" class="input-cadastro" placeholder="Confirme sua senha" type="password" name="password" required>
-                <div class="p-3">
-                    <button (click)="onSubmit()"
-                        class="btn-continuar">
-                        <p class="pl-3 m-0">Continuar</p>
-                        <img class="float-right pr-3" src="">
-                    </button>
-                </div>
-            </form>
-                    </div>
-                </div>
-            </div>
-        </div> 
     </div>
 </body>
-
-
-<form class="form-group col-0" method="POST">
-    <p class="pl-2 pr-4 pb-4">Peça sua conta e cartão de crédito do Fake Bank</p>
-    <input class="input-cadastro" placeholder="Digite seu CPF" type="text" name="txtCpf" id="input-cadastro" required="" autofocus="1">
-    <input class="input-cadastro" placeholder="Escolha um nome de usuário" type="text" name="txtUser" id="input-cadastro" required="">
-    <input class="input-cadastro" placeholder="Nome completo" type="text" name="txtName" id="input-cadastro" required="">
-    <input class="input-cadastro" placeholder="Digite sua senha" type="text" name="txtPassword" id="input-cadastro" required="">
-    <input class="input-cadastro" placeholder="Confirme sua senha" type="text" name="txtPasswordCheck" id="input-cadastro" required="">
-    <div class="col-12">
-</div>
-</form>
