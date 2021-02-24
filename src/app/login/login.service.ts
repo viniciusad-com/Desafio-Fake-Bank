@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+import { Login } from '../login.interface';
+import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
 
 @Injectable({
@@ -9,12 +11,18 @@ import { AuthService } from '../shared/services/auth/auth.service';
 })
 export class LoginService {
 
-  LOGIN_API_URL = environment.LOGIN_API_URL
+  FAKE_BANK_API_URL = environment.FAKE_BANK_API_URL;
   
   constructor(
     private http: HttpClient,
     private auth: AuthService) { }
 
+
+    
+    logged(login: Login) {
+      return this.http.post<Sessao>(this.FAKE_BANK_API_URL + '/login', login);
+    }
+    
   // checkLogin() {
 
   //   .pipe(
@@ -23,4 +31,5 @@ export class LoginService {
   //   return of({})
   //   //  return this.http.post<Country[]>(this.LOGIN_API_URL)
   // }
+  
 }

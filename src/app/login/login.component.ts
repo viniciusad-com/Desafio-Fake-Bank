@@ -1,7 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { finalize, take } from 'rxjs/operators';
 
+import { Sessao } from '../sessao.interface';
+import { AuthService } from '../shared/services/auth/auth.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -13,24 +17,49 @@ export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
   isError: boolean = false;
-  email!: string;
-  password!: string;
+
+
+  loginForm!: FormGroup;
+
+  sessao!: Sessao;
 
   constructor(
     private router: Router,
     private loginService: LoginService,
+    private http: HttpClient,
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit(): void {
+    this.initializeForm();
+    // this.checkLogin()
   }
 
 
-  onSubmit(form: any) {
-    if (!form.Valid) {
-      form.controls.email.markAsTouched();
-      form.controls.password.markAsTouched();
+  validateAllForms() {
+    Object.keys(this.loginForm.controls).forEach(fields => {
+      const control = this.loginForm.get(fields)
+
+      control?.markAllAsTouched();
+    })
+  }
+
+  onSubmit() {
+    if (this.loginForm.invalid) {
+      this.validateAllForms();
       return;
     }
+
+    this.checkLogin();
+  }
+
+
+  initializeForm() {
+    this.loginForm = this.formBuilder.group({
+      usuario: ['', Validators.required],
+      senha: ['', Validators.required]
+    })
   }
 
   exibeErro(nomeControle: string, form: NgForm) {
@@ -40,31 +69,35 @@ export class LoginComponent implements OnInit {
     return form.controls[nomeControle].invalid && form.controls[nomeControle].touched;
   }
 
-  /*  checkLogin() {
-     this.isLoading = true;
+    onSuccess(response: Sessao) {
+    console.log(response)
+     this.authService.setToken(response.token)
      this.isError = false;
 
-     this.loginService.checkLogin()
-     .pipe(
-       take(1),
-       finalize( () => this.isLoading = false )
-     ).subscribe(
-         response => { this.onSuccess(response) },
-         error => { this.onError(error) }
-       )
-   }
-
-   onSuccess(response: any[]) {
-     this.isError = false;
-     this.countryList = response;
-
-     this.router.navigate(['home']);
+      
+     
+     this.router.navigate(['dashboard']);
    }
 
    onError(error: any) {
      this.isError = true;
      console.log(error);
-   } */
+   } 
+
+   checkLogin() {
+    this.isLoading = true;
+    this.isError = false;
+    this.loginService.logged(this.loginForm.value)
+      .pipe(
+        take(1),
+        finalize(() => this.isLoading = false)
+      )
+      .subscribe(
+        response => this.onSuccess(response),
+        error => this.onError(error)
+      )
+  }
+
 
 
 }

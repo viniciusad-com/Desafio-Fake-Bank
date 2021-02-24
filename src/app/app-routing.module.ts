@@ -18,10 +18,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   }, {
-    path: 'home/recovery-pass',
+    path: 'recovery-pass',
     component: RecoveryPassComponent
   }, {
-    path: 'home/dashboard',
+    path: 'dashboard',
     component: DashComponent,
   }, {
     path: '**',
