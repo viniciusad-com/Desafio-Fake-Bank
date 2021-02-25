@@ -89,6 +89,5 @@ export class HomeComponent implements OnInit {
      this.isError = true;
      this.signInError = error.error.error
      this.alertService.error('', this.signInError = error.error.error)
-     console.log(' mensagem de erro',error.message);
    } 
 }
