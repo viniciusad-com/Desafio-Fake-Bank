@@ -5,8 +5,6 @@ import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
-import { Home2Component } from './shared/home2/home2.component';
-import { Home3Component } from './shared/home3/home3.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -26,12 +24,6 @@ const routes: Routes = [
   }, {
     path: 'dashboard',
     component: DashComponent,
-  }, {
-    path: "home2",
-    component: Home2Component
-  }, {
-    path: "home3",
-    component: Home3Component
   }, {
     path: '**',
     component: PageNotFoundComponent

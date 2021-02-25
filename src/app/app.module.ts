@@ -16,8 +16,10 @@ import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { Home2Component } from './shared/home2/home2.component';
-import { Home3Component } from './shared/home3/home3.component';
+import { Home2Component } from './shared/components/home2/home2.component';
+import { Home3Component } from './shared/components/home3/home3.component';
+import { Home4Component } from './shared/components/home4/home4.component';
+import { Home5Component } from './shared/components/home5/home5.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -36,6 +38,8 @@ registerLocaleData(localePt, 'pt');
     DashComponent,
     Home2Component,
     Home3Component,
+    Home4Component,
+    Home5Component,
   ],
   imports: [
     BrowserModule,
