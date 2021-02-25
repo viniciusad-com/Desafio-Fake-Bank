@@ -25,7 +25,7 @@
                 <p> Saldo disponível </p>
                 <p> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </p>
                 <a> Transações </a>
-                <p> {{ dashboard.contaBanco.lancamentos }} </p>
+                <p> {{ countBankValue(dashboard.contaBanco)  }} </p>
             </div>
         </div>
         
@@ -35,19 +35,19 @@
                 <p> Saldo disponível </p>
                 <p> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </p>
                 <a> Transações </a>
-                <p> {{ dashboard.contaCredito.lancamentos }} </p>
+                <p> {{ countBankValue(dashboard.contaCredito)  }} </p>
             </div>
         </div>
     </div>
     
     <div class="card transacoes-card m-5">
-        <div class="card-body">
+        <div *ngIf="this.dashboard.contaCredito.lancamentos" class="card-body">
             <p> Últimos lançamentos </p>
-            <!-- <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
+             <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
                 <p> {{ lancamento.descricao  }} </p>
                 <p> {{ lancamento.conta  }} </p>
                 <p> {{ lancamento.valor  }} </p>
-            </div> -->
+            </div>
         </div>
     </div>
   </div>
