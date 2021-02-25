@@ -27,8 +27,10 @@ export class DashComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.validateCredentials();
-
+    console.log(this.session);
+    console.log(this.session.token);
     this.checkDashboard();
   }
 
@@ -57,8 +59,10 @@ export class DashComponent implements OnInit {
       )
   }
 
-  onSuccess(response: Dashboard) {
+  onSuccess(response: any) {
+    console.log('VERRRRRRRRRRRRRR',response);
     this.dashboard = response;
+    
   }
 
   

@@ -12,6 +12,7 @@ import { LoginService } from '../login/login.service';
 })
 export class HomeComponent implements OnInit {
 
+  signInError!: string;
   signInForm!: FormGroup;
   isLoading: boolean = true;
   isError: boolean = false;
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.initializeForm();
   }
 
   onSignIn() {
@@ -38,8 +40,11 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
+    this.validateAllForms();
+    console.log(this.signInForm)
+
     if (this.signInForm.invalid) {
-      this.validateAllForms();
+      
       return;
     }
 
@@ -52,6 +57,7 @@ export class HomeComponent implements OnInit {
       login: ['', Validators.required],
       nome: ['', Validators.required],
       senha: ['', Validators.required],
+      confirmacao: ['', Validators.required],
     })
   }
 
@@ -80,6 +86,10 @@ export class HomeComponent implements OnInit {
     onError(error: any) {
      this.isError = true;
      console.log(error);
+     console.log(error.error);
+
+     this.signInError = error.error.error
+     console.log(this.signInError);
    } 
 
   

@@ -23,14 +23,21 @@ export class DashService {
       headers = headers.append('Authorization', session.token);
       
       let params = new HttpParams();
-      params = params.append('fim', session.dataFim);
-      params = params.append('inicio', session.dataInicio);
+      params = params.append('fim', this.formatDate(session.dataFim));
+      params = params.append('inicio', this.formatDate(session.dataInicio));
       params = params.append('login', session.usuario.login);
       
       
       return this.http.get<Dashboard>(this.FAKE_BANK_API_URL + '/dashboard', {headers, params});
     }
 
+    formatDate(date: string) {
+      return date.substring(0,10);
 
+      // return date.slice(10);
+
+      
+
+    }
 
 }
