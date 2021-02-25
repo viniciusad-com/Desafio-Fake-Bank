@@ -1,0 +1,164 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    font: 400 1rem "Roboto", sans-serif;
+    background: #8c52e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .logo-container {
+    position: absolute;
+  
+    top: 52px;
+    left: 63px;
+  }
+  
+  .login-card-title {
+    text-align: center;
+    font-weight: 700;
+  }
+  .login-card {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #fbfbfb;
+    width: 455px;
+    height: 422px;
+  
+    line-height: 14, 06px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  .login-input {
+    background-color: transparent;
+    border-width: 0px 0px 1px;
+    box-sizing: border-box;
+    text-align: left;
+    outline: none;
+    border-bottom-style: solid;
+    border-bottom-color: #878686;
+    white-space: nowrap;
+    overflow: hidden;
+  
+    font-size: 14px;
+    line-height: 40px;
+    width: 352.78px;
+    height: 42px;
+    padding: 0 10px;
+  }
+  
+  .btn-continuar {
+    width: 360px;
+    height: 42px;
+    border-radius: 20px;
+    background-color: #68de5a;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+  }
+  
+  .login-forgot-password {
+    text-align: center;
+    padding: 25px 0;
+    line-height: 25px;
+  }
+  
+  .login-forgot-password a {
+    color: #8c52e5;
+    font-weight: 500;
+  }
+  
+  
+  @media screen and (max-width: 460px) {
+    .logo-container img {
+      width: 70vw;
+    }
+    .logo-container {
+      top: 30px;
+      left: 70px;
+    }
+    .login-card {
+      width: 90vw;
+    }
+  }
+  
+  @media screen and (max-width: 375px and 411px and 414px) {
+    .logo-container img {
+      width: 85vw;
+    }
+    .logo-container {
+      top: 30px;
+      left: 29px;
+    }
+  
+    .login-card {
+      width: 90vw;
+    }
+    .login-input {
+      width: 80vw;
+    }
+    .btn-continuar {
+      width: 80vw;
+    }
+    .login-forgot-password {
+      padding-top: 35px;
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    .logo-container img {
+      width: 84vw;
+    }
+    .logo-container {
+      top: 15px;
+      left: 29px;
+    }
+  
+    .login-card {
+      top: 20px;
+      width: 90vw;
+    }
+    .login-input {
+      width: 80vw;
+    }
+    .btn-continuar {
+      width: 80vw;
+    }
+    .login-forgot-password {
+      padding-top: 35px;
+    }
+  }
+  
+  @media screen and (max-width: 280px) {
+    .logo-container img {
+      width: 80vw;
+    }
+    .logo-container {
+      top: 30px;
+      left: 29px;
+    }
+  
+    .login-card {
+      width: 90vw;
+    }
+    .login-input {
+      width: 80vw;
+    }
+    .btn-continuar {
+      width: 80vw;
+    }
+    .login-forgot-password {
+      padding-top: 35px;
+    }
+  }
+  

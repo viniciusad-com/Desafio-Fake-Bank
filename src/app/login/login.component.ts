@@ -6,6 +6,7 @@ import { finalize, take } from 'rxjs/operators';
 
 import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { AlertService } from './../shared/services/alert/alert.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private formBuilder: FormBuilder,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
@@ -74,7 +76,7 @@ export class LoginComponent implements OnInit {
 
     onError(error: any) {
      this.isError = true;
-     console.log(error);
+     this.alertService.error('', error.error.error)
    } 
 
   checkLogin() {
