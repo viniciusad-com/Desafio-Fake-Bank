@@ -1,28 +1,36 @@
 <body>
-    <div class="logo p-5">
+    <div class="logo-container">
       <a href="./fake-bank-home.html">
         <img src="../assets/logo-gama-academy-horizontal.png">
       </a>
     </div>
 
-    <div class="access-container">
-      <div class="txt-home">
-        <p>Fake Bank é um projeto de nossos alunos.</p>
-        <p>Já tem conta?</p>
-        <button 
-            class="btn-acessar" 
-            href="./fake-bank-home.html"
-            (click)="onSignIn()">
-            <p class="pl-3 m-0">Acessar</p>
-            <img class="pr-3" src="../../assets/arrow-accesso.svg">
-        </button>
+    <div class="login-container">
+      <p>Fake Bank é um projeto de nossos alunos.</p>
+      <p>Já tem conta?</p>
+      <button 
+          class="btn-acessar" 
+          href="./fake-bank-home.html"
+          (click)="onSignIn()">
+          Acessar
+          <img class="pr-3" src="../../assets/arrow-accesso.svg">
+      </button>
     </div>
 
-      <div class="request-card-box">
-          <form [formGroup]="signInForm" 
-            class="form-group col-0 p-3" 
-            method="POST"
+    <div class="register-container">
+        <form [formGroup]="signInForm" 
+          class="form-group col-0 p-3" 
+          method="POST"
+        >
+          <p>Peça sua conta e cartão de crédito do Gama Bank</p>
+          <input
+            formControlName= "cpf" 
+            class="input-cadastro" 
+            placeholder="Digite seu CPF" 
+            type="number" 
+            required
           >
+
             <p>Peça sua conta e cartão de crédito do Gama Bank</p>
             <input
               formControlName= "cpf" 
@@ -72,3 +80,8 @@
         </div>
     </div>
 </body>
+
+<app-home2></app-home2> 
+<app-home3></app-home3>
+<app-home4></app-home4>
+<app-home5></app-home5>
