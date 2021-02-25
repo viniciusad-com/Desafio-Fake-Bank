@@ -13,13 +13,13 @@ import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { Home2Component } from './shared/components/home2/home2.component';
 import { Home3Component } from './shared/components/home3/home3.component';
 import { Home4Component } from './shared/components/home4/home4.component';
 import { Home5Component } from './shared/components/home5/home5.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 registerLocaleData(localePt, 'pt');
 
