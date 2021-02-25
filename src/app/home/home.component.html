@@ -30,49 +30,58 @@
             type="number" 
             required
           >
-          <input 
-            formControlName= "usuario"
-            class="input-cadastro" 
-            placeholder="Escolha um nome de usuário"
-            type="text" 
-            required
-          >
-          <input 
-            formControlName= "nome" 
-            class="input-cadastro"
-            placeholder="Digite seu nome completo" 
-            type="text" 
-            required
-          >
-          <input 
-            formControlName= "senha" 
-            class="input-cadastro" 
-            placeholder="Digite sua senha" 
-            type="password" 
-            name="password"
-            required
-          >
-          <input 
-            formControlName= "confirmacao-senha"
-            class="input-cadastro"
-            placeholder="Confirme sua senha"
-            type="password"
-            name="password"
-            required
-          >
-          <button 
-            (click)="onSubmit()"
-            class="btn-continuar"
-          >
-            Continuar
-            <img src="../../assets/arrow-accesso-grey.svg">
-          </button>
-        </form>
-      </div>
+
+            <p>Peça sua conta e cartão de crédito do Gama Bank</p>
+            <input
+              formControlName= "cpf" 
+              class="input-cadastro" 
+              placeholder="Digite seu CPF" 
+              type="number" 
+              required
+            >
+            <input 
+              formControlName= "login"
+              class="input-cadastro" 
+              placeholder="Escolha um nome de usuário"
+              type="text" 
+              required
+            >
+            <input 
+              formControlName= "nome" 
+              class="input-cadastro"
+              placeholder="Digite seu nome completo" 
+              type="text" 
+              required
+            >
+            <input 
+              formControlName= "senha" 
+              class="input-cadastro" 
+              placeholder="Digite sua senha" 
+              type="password" 
+              name="password"
+              required
+            >
+            <input 
+              formControlName= "confirmacao"
+              class="input-cadastro"
+              placeholder="Confirme sua senha"
+              type="password"
+              name="password"
+              required
+            >
+            <button 
+              (click)="onSubmit()"
+              class="btn-continuar"
+            >
+              <p class="pl-3 m-0">Continuar</p>
+              <img src="../../assets/arrow-accesso-grey.svg">
+            </button>
+          </form>
+        </div>
+    </div>
 </body>
 
 <app-home2></app-home2> 
 <app-home3></app-home3>
 <app-home4></app-home4>
 <app-home5></app-home5>
-
