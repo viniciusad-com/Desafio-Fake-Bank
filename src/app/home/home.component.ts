@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
 import { LoginService } from '../login/login.service';
+import { AlertService } from './../shared/services/alert/alert.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private loginService: LoginService,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
@@ -85,13 +87,9 @@ export class HomeComponent implements OnInit {
 
     onError(error: any) {
      this.isError = true;
-     console.log(error);
-     console.log(error.error);
-
      this.signInError = error.error.error
-     console.log(this.signInError);
+     this.alertService.error('', this.signInError = error.error.error)
+     console.log(' mensagem de erro',error.message);
    } 
-
-  
 
 }
