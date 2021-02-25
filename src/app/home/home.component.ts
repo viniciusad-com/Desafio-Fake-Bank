@@ -91,7 +91,4 @@ export class HomeComponent implements OnInit {
      this.signInError = error.error.error
      console.log(this.signInError);
    } 
-
-  
-
 }
