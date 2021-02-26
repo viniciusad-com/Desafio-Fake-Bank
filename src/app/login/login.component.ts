@@ -6,6 +6,7 @@ import { finalize, take } from 'rxjs/operators';
 
 import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { Login } from './../login.interface';
 import { AlertService } from './../shared/services/alert/alert.service';
 import { LoginService } from './login.service';
 
@@ -18,6 +19,10 @@ export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
   isError: boolean = false;
+  login: Login = {
+    senha: '',
+    usuario: '',
+  };
 
 
   loginForm!: FormGroup;
@@ -34,7 +39,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.checkLoginInitial();
     this.initializeForm();
+    this.checkLoginFinal();
   }
 
 
@@ -44,6 +51,18 @@ export class LoginComponent implements OnInit {
 
       control?.markAllAsTouched();
     })
+  }
+
+  checkLoginInitial() {
+    if (this.authService.getLogin()) {
+      this.login = this.authService.getLogin()
+    }
+  }
+
+  checkLoginFinal() {
+    if (this.loginForm) {
+      this.onSubmit();
+    }
   }
 
   onSubmit() {
@@ -58,26 +77,26 @@ export class LoginComponent implements OnInit {
 
   initializeForm() {
     this.loginForm = this.formBuilder.group({
-      usuario: ['', Validators.required],
-      senha: ['', Validators.required]
+      usuario: [this.login.usuario, Validators.required],
+      senha: [this.login.senha, Validators.required]
     })
   }
 
   onSuccess(response: Sessao) {
     console.log(response)
     this.authService.setSession(response)
-     this.authService.setToken(response.token)
-     this.isError = false;
+    this.authService.setToken(response.token)
+    this.isError = false;
 
-      
-     
-     this.router.navigate(['dashboard']);
-   }
 
-    onError(error: any) {
-     this.isError = true;
-     this.alertService.error('', error.error.error)
-   } 
+
+    this.router.navigate(['dashboard']);
+  }
+
+  onError(error: any) {
+    this.isError = true;
+    this.alertService.error('', error.error.error)
+  }
 
   checkLogin() {
     this.isLoading = true;
@@ -97,11 +116,11 @@ export class LoginComponent implements OnInit {
   onRecoveryPass() {
     this.router.navigate(['recovery-pass']);
   }
-  
+
   onSignUp() {
     this.router.navigate(['home']);
   }
-  
+
 
 
 }

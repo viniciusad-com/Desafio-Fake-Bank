@@ -13,13 +13,15 @@
             <form [formGroup]="loginForm" 
                 class="form-group col-0 p-3" 
                 method="POST">
-                <input formControlName = "usuario" 
+                <input 
+                    formControlName = "usuario" 
                     class="login-input mt-2" 
                     placeholder="Digite seu usuário" 
                     type="text" 
                     name="user" 
                     required="">
-                <input formControlName = "senha" 
+                <input 
+                    formControlName = "senha" 
                     class="login-input mt-5" 
                     placeholder="Digite sua senha" 
                     type="password" name="password" 
