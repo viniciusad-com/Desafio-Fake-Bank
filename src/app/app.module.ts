@@ -4,11 +4,10 @@ import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CountryListDetailComponent } from './country-list/country-list-detail/country-list-detail.component';
-import { CountryListComponent } from './country-list/country-list.component';
 import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -29,8 +28,6 @@ registerLocaleData(localePt, 'pt');
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    CountryListComponent,
-    CountryListDetailComponent,
     PageNotFoundComponent,
     FooterComponent,
     HomeComponent,
@@ -47,6 +44,9 @@ registerLocaleData(localePt, 'pt');
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+  ],
+  exports:[
+    RouterModule,
   ],
   providers: [{
     provide: LOCALE_ID,
