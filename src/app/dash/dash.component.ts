@@ -60,14 +60,10 @@ export class DashComponent implements OnInit {
       )
   }
 
-  
-
   onSuccess(response: any) {
     console.log('VERRRRRRRRRRRRRR', response);
     this.dashboard = response;
-
   }
-
 
   onError(error: any) {
     console.log(error)

@@ -109,7 +109,7 @@ export class LoginComponent implements OnInit {
   }
 
   onRecoveryPass() {
-    this.router.navigate(['recovery-pass']);
+    this.router.navigate(['temporary-pass']);
   }
 
   onSignUp() {

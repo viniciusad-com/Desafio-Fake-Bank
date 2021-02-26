@@ -12,6 +12,7 @@ import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
+import { TemporaryPassComponent } from './temporary-pass/temporary-pass.component';
 import { Home2Component } from './shared/components/home2/home2.component';
 import { Home3Component } from './shared/components/home3/home3.component';
 import { Home4Component } from './shared/components/home4/home4.component';
@@ -37,6 +38,7 @@ registerLocaleData(localePt, 'pt');
     Home3Component,
     Home4Component,
     Home5Component,
+    TemporaryPassComponent,
   ],
   imports: [
     BrowserModule,

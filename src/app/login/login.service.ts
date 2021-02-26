@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment';
 
 import { Login } from '../login.interface';
 import { Sessao } from '../sessao.interface';
-import { AuthService } from '../shared/services/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +14,9 @@ export class LoginService {
   
   constructor(
     private http: HttpClient,
-    private auth: AuthService) { }
+  ) { }
 
-
-    
-    logged(login: Login) {
-      return this.http.post<Sessao>(this.FAKE_BANK_API_URL + '/login', login);
-    }
-
-    
-    
+  logged(login: Login) {
+    return this.http.post<Sessao>(this.FAKE_BANK_API_URL + '/login', login);
+  }
 }

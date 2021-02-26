@@ -1,30 +1,44 @@
 <body>
     <div class="logo-container">
-
       <a href="/home">
         <img src="../assets/logo-gama-academy-horizontal.png">
       </a>
     </div>
   
-    <div class="card login-card mx-auto">
-      <div class="card-body pt-2">
-        <h5 class="card-title text-center">Esqueci minha senha</h5>
-        <p>Confirme seu CPF e escolha sua nova senha.</p>
+    <div class="recoverpass-container">
+        <h5>Alterar senha</h5>
+        <p>Confirme seu nome de usuário e insira sua nova senha.</p>
         <form [formGroup]="recoveryForm" 
-          class="form-group col-0 p-3" 
+          class="form-group" 
           method="POST"
         >
           <input 
             formControlName = "usuario" 
-            class="login-input mt-2" 
-            placeholder="Confirme seu CPF" 
+            class="input-cadastro" 
+            placeholder="Insira seu nome de usuário" 
             type="text" 
-            name="user" 
+            name="usuario" 
             required
           >
+          <!-- <input 
+            formControlName = "senha" 
+            class="input-cadastro" 
+            placeholder="Insira sua senha temporária" 
+            type="text" 
+            name="senha" 
+            required
+          > -->
           <input 
             formControlName = "senha" 
-            class="login-input mt-5" 
+            class="input-cadastro" 
+            placeholder="Insira sua nova senha" 
+            type="text" 
+            name="senha" 
+            required
+          >
+          <!-- <input 
+            formControlName = "senha" 
+            class="input-cadastro"  
             placeholder="Digite sua nova senha" 
             type="password" 
             name="password" 
@@ -32,23 +46,22 @@
           >
           <input 
           formControlName = "senha" 
-          class="login-input mt-5" 
+          class="input-cadastro" 
           placeholder="Confirme sua nova senha" 
           type="password" 
           name="password" 
           required
-        >
-          <div class="pt-5">
+        > -->
+          <div>
             <button (click)="onSubmit()"
-              class="btn-continuar" 
-              href="./fake-bank-home.html"
+              class="btn-enviar" 
+              href="/home"
             >
-              Continuar
+              Enviar
               <img class="pr-3" src="../../assets/arrow-login.svg">
             </button>
           </div>
         </form>
       </div>
-    </div>
   </body>
  

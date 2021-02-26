@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { AlteraSenha } from '../alteraSenha.interface';
+import { AlteraSenhaResponse } from '../alteraSenhaResponse.interface';
+import { AuthService } from '../shared/services/auth/auth.service';
 import { environment } from './../../environments/environment';
-import { Login } from './../login.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,15 @@ export class RecoveryPassService {
 
   constructor(
     private http: HttpClient,
+    private authService: AuthService
   ) { }
 
 
-  recovery(login: Login) {
-    return this.http.post<any>(this.FAKE_BANK_API_URL + '/nova-senha', login);
-  }
+  recoveryPass(senhaTemporaria: AlteraSenhaResponse) {
+    
+    let params = new HttpParams();
+    params = params.append('senhaTemporaria', senhaTemporaria.senhaTemporaria);
 
+    return this.http.post<AlteraSenha>(this.FAKE_BANK_API_URL + '/altera-senha', {params});
+  }
 }

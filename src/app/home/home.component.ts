@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToLogin() {
-    this.router.navigate([`login`]);
+    this.router.navigate(["login"]);
   }
 
   validateAllForms() {
@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
     console.log(this.signInForm)
 
     if (this.signInForm.invalid) {
-
       return;
     }
 

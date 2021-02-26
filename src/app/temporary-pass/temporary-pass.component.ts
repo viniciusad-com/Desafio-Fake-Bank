@@ -5,25 +5,27 @@ import { finalize, take } from 'rxjs/operators';
 
 import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
-import { RecoveryPassService } from './recovery-pass.service';
+import { TemporaryPassService } from './temporary-pass.service';
 
 @Component({
-  selector: 'app-recovery-pass',
-  templateUrl: './recovery-pass.component.html',
-  styleUrls: ['./recovery-pass.component.scss']
+  selector: 'app-temporary-pass',
+  templateUrl: './temporary-pass.component.html',
+  styleUrls: ['./temporary-pass.component.scss']
 })
-export class RecoveryPassComponent implements OnInit {
+export class TemporaryPassComponent implements OnInit {
 
   isLoading: boolean = false;
   isError: boolean = false;
 
-  recoveryForm!: FormGroup;
+  temporaryForm!: FormGroup;
+
+  sessao!: Sessao;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private recoveryPassService: RecoveryPassService,
+    private temporaryPassService: TemporaryPassService,
   ) { }
 
 
@@ -32,34 +34,36 @@ export class RecoveryPassComponent implements OnInit {
   }
 
   validateAllForms() {
-    Object.keys(this.recoveryForm.controls).forEach(fields => {
-      const control = this.recoveryForm.get(fields)
+    Object.keys(this.temporaryForm.controls).forEach(fields => {
+      const control = this.temporaryForm.get(fields)
 
       control?.markAllAsTouched();
     })
   }
 
   onSubmit() {
-    if (this.recoveryForm.invalid) {
+    if (this.temporaryForm.invalid) {
       this.validateAllForms();
       return;
     }
 
-    this.checkRecoveryPass();
-    alert("Senha alterada com sucesso.")
-    this.router.navigate(['login']);
+    this.checkTemporaryPass();
   }
 
   initializeForm() {
-    this.recoveryForm = this.formBuilder.group({
-      senha: ['', Validators.required],
-      usuario: ['', Validators.required]
+    this.temporaryForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      login: ['', Validators.required]
     })
   }
-  
+
   onSuccess(response: any) {
-    console.log(response)
+    console.log(response);
+    this.authService.setTemporaryPass(response);
+ 
     this.isError = false;
+    
+    this.router.navigate(['recovery-pass']);
    }
 
   onError(error: any) {
@@ -67,10 +71,10 @@ export class RecoveryPassComponent implements OnInit {
     console.log(error);
   } 
 
-  checkRecoveryPass() {
+  checkTemporaryPass() {
     this.isLoading = true;
     this.isError = false;
-    this.recoveryPassService.recoveryPass(this.recoveryForm.value)
+    this.temporaryPassService.temporaryPass(this.temporaryForm.value)
       .pipe(
         take(1),
         finalize(() => this.isLoading = false)
