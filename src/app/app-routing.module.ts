@@ -5,6 +5,7 @@ import { DashComponent } from './dash/dash.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
+import { TemporaryPassComponent } from './temporary-pass/temporary-pass.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -19,6 +20,9 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   }, {
+    path: 'temporary-pass',
+    component: TemporaryPassComponent
+  },{
     path: 'recovery-pass',
     component: RecoveryPassComponent
   }, {

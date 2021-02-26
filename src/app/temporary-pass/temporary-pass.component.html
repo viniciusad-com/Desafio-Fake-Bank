@@ -1,0 +1,43 @@
+<body>
+    <div class="logo-container">
+      <a href="/home">
+        <img src="../assets/logo-gama-academy-horizontal.png">
+      </a>
+    </div>
+  
+    <div class="recoverpass-container">
+        <h5>Esqueci minha senha</h5>
+        <p>Confirme seu e-mail e nome de usuário para receber uma senha temporária.</p>
+        <form [formGroup]="temporaryForm" 
+          class="form-group" 
+          method="POST"
+        >
+          <input 
+            formControlName = "email" 
+            class="input-cadastro" 
+            placeholder="Insira seu e-mail" 
+            type="text" 
+            name="email" 
+            required
+          >
+          <input 
+            formControlName = "login" 
+            class="input-cadastro" 
+            placeholder="Insira seu nome de usuário" 
+            type="text" 
+            name="login" 
+            required
+          >
+          <div>
+            <button (click)="onSubmit()"
+              class="btn-enviar" 
+              href=""
+            >
+              Enviar
+              <img class="pr-3" src="../../assets/arrow-login.svg">
+            </button>
+          </div>
+        </form>
+      </div>
+  </body>
+ 

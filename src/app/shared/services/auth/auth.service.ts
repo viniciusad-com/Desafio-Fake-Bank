@@ -16,8 +16,8 @@ export class AuthService {
   login!: Login;
   token!: string;
   session!: Sessao;
+  temporaryPass!: string;
 
-  
   constructor(
     private http: HttpClient, 
     private router: Router) { }
@@ -41,49 +41,66 @@ export class AuthService {
       return  {
         senha: '',
         usuario: '',
-      };;
+      };
     }
- 
- 
- 
  
     setSession(session: Sessao) {
-    this.session = session
-    localStorage.setItem('session', JSON.stringify(session));
-  }
+      this.session = session
+      localStorage.setItem('session', JSON.stringify(session));
+    }
 
-  getSession() {
-    if (this.session) {
-      return this.session;
+    getSession() {
+      if (this.session) {
+        return this.session;
+      }
+    
+      const sessionLocale = localStorage.getItem('session')
+      if (sessionLocale) {
+        this.session = JSON.parse(sessionLocale);
+        return this.session;
+      }
+
+      return null;
     }
     
-    const sessionLocale = localStorage.getItem('session')
-    if (sessionLocale) {
-      this.session = JSON.parse(sessionLocale);
-      return this.session;
+    setToken(token: string) {
+      this.token = token;
+      localStorage.setItem('token', token);
     }
 
-    return null;
-  }
+    getToken() {
+      if (this.token) {
+        return this.token;
+      }
     
-  setToken(token: string) {
-    this.token = token;
-    localStorage.setItem('token', token);
-  }
+      const tokenLocale = localStorage.getItem('token')
+      if (tokenLocale) {
+        this.token = tokenLocale;
+        return this.token;
+      }
 
-  getToken() {
-    if (this.token) {
-      return this.token;
-    }
-    
-    const tokenLocale = localStorage.getItem('token')
-    if (tokenLocale) {
-      this.token = tokenLocale;
-      return this.token;
+      return null;
     }
 
-    return null;
-  }
+    setTemporaryPass(temporaryPass: string) {
+      this.temporaryPass = temporaryPass;
+      localStorage.setItem('senhaTemporaria', temporaryPass)
+    }
+
+    getTemporaryPass() {
+      if(this.temporaryPass) {
+        return this.temporaryPass;
+      }
+
+      const temporaryPassLocale = localStorage.getItem('senhaTemporaria')
+      if(temporaryPassLocale) {
+        this.temporaryPass = temporaryPassLocale;
+        return this.temporaryPass
+      }
+
+      return null;
+    }
+ 
 
   /* logout() {
     const y: string = null as any;
@@ -93,12 +110,4 @@ export class AuthService {
     localStorage.clear();
     this.router.navigate(['login']);
   } */
-
-
-
-
-
-  
-
- 
 }

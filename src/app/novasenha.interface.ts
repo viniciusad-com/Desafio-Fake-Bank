@@ -1,4 +1,4 @@
 export interface NovaSenha {
     email: string,
-    usuario: string,
+    login: string,
 }
