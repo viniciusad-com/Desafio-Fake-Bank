@@ -1,53 +1,94 @@
-<div class="sidenav">
-    <div>
-        <a href="#">Depósitos</a>
+<body>
+    <div class="sidenav">
+        <div class="logo-container">
+            <a href="#">
+            <img src="../../assets/dash-logo-gama-academy-square.png" alt="Logo Gama Academy" title="Logo Gama Academy">
+            </a>
+        </div>
+        <div class="types-container" alt="Depósitos" title="Depósitos">
+            <div class="pix">
+                <img src="../../assets/Pix.png">
+            </div>
+            <div class="types">
+                <a href="#">Depósitos</a>
+            </div>
+        </div>
+        <div class="types-container" alt="Planos" title="Planos">
+            <div class="pix">
+                <img src="../../assets/Pix.png">
+            </div>
+            <div class="types">
+                <a href="#">Planos</a>
+            </div> 
+        </div>
+        <div class="types-container" alt="Pagamentos" title="Pagamentos">
+            <div class="pix">
+                <img src="../../assets/Pix.png">
+            </div>
+            <div class="types">
+                <a href="#">Pagamentos</a>
+            </div>
+        </div>
+        <div class="types-container" alt="Transações" title="Transações">
+            <div class="pix">
+                <img src="../../assets/Pix.png">
+            </div>
+            <div class="types">
+                <a href="#">Transações</a>
+            </div>
+        </div>
     </div>
-    <div>
-        <a href="#">Planos</a>
-    </div>
-    <div>
-        <a href="#">Pagamentos</a>
-    </div>
-    <div>
-        <a href="#">Transações</a>
-    </div>
-  </div>
 
-  <div id="main">
-    <div class="welcome-text">
-        <p> Olá {{ session.usuario.nome }}, seja bem vindo! </p>
-    </div>
-    
-    <div class="card-group">
-        <div class="card conta-card m-5">
-            <div class="card-body">
-                <p> Conta </p>
-                <p> Saldo disponível </p>
-                <p> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </p>
-                <a> Transações </a>
-                <p> {{ countBankValue(dashboard.contaBanco)  }} </p>
+    <div id="main" class="main">
+        <div class="welcome-text">
+            <p class="col"> Olá {{ session.usuario.nome }}, seja bem vindo(a)!
+                <a class="float-right" href="#">
+                    <img class="eye" src="../../assets/eye-top.png" alt="ocultar extrato" title="ocultar extrato">
+                </a>
+            </p>
+        </div>
+        
+        <div class="card-group">
+            <div class="card conta-card m-4 rounded-lg">
+                <div class="card-body">
+                    <p><img src="../../assets/dollar.png" alt="Saldo conta" title="Saldo conta"> Conta </p>
+                    <p> Saldo disponível </p>
+                    <h1 class="conta-saldo"> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </h1>
+                    <div class="row pt-4 justify-content-around">
+                        <p class="pt-2"> Transações </p>
+                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaBanco) | currency:'BRL' }} </h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card conta-card m-4 rounded-lg">
+                <div class="card-body">
+                    <p><img src="../../assets/credit-card.png" alt="Saldo crédito" title="Saldo crédito"> Conta Crédito </p>
+                    <p> Saldo disponível </p>
+                    <h1 class="credito-saldo"> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </h1>
+                    <div class="row pt-4 justify-content-around">
+                        <p class="pt-2"> Limite disponível </p>
+                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaCredito) | currency:'BRL' }} </h1>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div class="card conta-card m-5">
-            <div class="card-body">
-                <p> Conta Crédito </p>
-                <p> Saldo disponível </p>
-                <p> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </p>
-                <a> Transações </a>
-                <p> {{ countBankValue(dashboard.contaCredito)  }} </p>
+        <div class="card-group">
+            <div class="card transacoes-card m-2 rounded-lg">
+                <div *ngIf="this.dashboard.contaCredito.lancamentos" class="card-body">
+                    <p><img src="../../assets/dollar.png" alt="Últimos lançamentos" title="Últimos lançamentos"> Últimos lançamentos </p>
+                    
+                    <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
+                        <p> <img src="../../assets/credit-card2.png" alt="Últimos lançamentos" title="Últimos lançamentos">
+                            {{ lancamento.descricao  }} 
+                        </p>
+                        <p> {{ lancamento.conta  }} </p>
+                        <p> {{ lancamento.valor  }} </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="card transacoes-card m-5">
-        <div *ngIf="this.dashboard.contaCredito.lancamentos" class="card-body">
-            <p> Últimos lançamentos </p>
-             <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
-                <p> {{ lancamento.descricao  }} </p>
-                <p> {{ lancamento.conta  }} </p>
-                <p> {{ lancamento.valor  }} </p>
-            </div>
-        </div>
-    </div>
-  </div>
+
+</body>
