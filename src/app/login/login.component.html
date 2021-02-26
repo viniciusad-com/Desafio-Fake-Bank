@@ -5,39 +5,35 @@
     </a>
   </div>
 
-  <div class="card login-card mx-auto">
-    <div class="card-body pt-2">
-      <h5 class="card-title text-center">Faça seu login</h5>
-      
-      <form [formGroup]="loginForm" 
-        class="form-group col-0 p-3" 
-        method="POST"
-      >
-        <input 
-          formControlName = "usuario" 
-          class="login-input mt-2" 
-          placeholder="Digite seu usuário" 
-          type="text" 
-          name="user" 
-          required=""
-        >
-        <input 
-          formControlName = "senha" 
-          class="login-input mt-5" 
-          placeholder="Digite sua senha" 
-          type="password" 
-          name="password" 
-          required=""
-        >
-        <div class="pt-5">
-          <button (click)="onSubmit()"
-            class="btn-continuar" 
-            href="./fake-bank-home.html"
-          >
-            Continuar
-            <img class="pr-3" src="../../assets/arrow-login.svg">
-          </button>
-        </div>
+    <div class="card login-card mx-auto">
+        
+        <div class="card-body pt-2">
+            <h5 class="card-title text-center">Faça seu login</h5>
+            
+            <form [formGroup]="loginForm" 
+                class="form-group col-0 p-3" 
+                method="POST">
+                <input 
+                    formControlName = "usuario" 
+                    class="login-input mt-2" 
+                    placeholder="Digite seu usuário" 
+                    type="text" 
+                    name="user" 
+                    required="">
+                <input 
+                    formControlName = "senha" 
+                    class="login-input mt-5" 
+                    placeholder="Digite sua senha" 
+                    type="password" name="password" 
+                    required="">
+                <div class="pt-5">
+                    <button (click)="onSubmit()"
+                        class="btn-continuar" 
+                        href="./fake-bank-home.html">
+                        <p class="pl-3 m-0">Continuar</p>
+                        <img class="pr-3" src="../../assets/arrow-login.svg">
+                    </button>
+                </div>
 
         <div class="login-forgot-password">
           <a class="" (click)="onRecoveryPass()" href="/recovery-pass"> Esqueci minha senha > </a> <br>

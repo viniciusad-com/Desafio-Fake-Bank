@@ -27,34 +27,18 @@ body {
   
   .login-card {
     font-size: 0.875rem;
-    border-radius: 8px;
-    background-color: #fbfbfb;
-    width: 455px;
-    height: 422px;
-  
-    line-height: 14, 06px;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .login-input {
-    background-color: transparent;
-    border-width: 0px 0px 1px;
-    box-sizing: border-box;
-    
+
+  .login-card {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+
+    padding: 30px;
+
     text-align: left;
     outline: none;
     width: 100%;
-    border-bottom-style: solid;
-    border-bottom-color: #878686;
-    white-space: nowrap;
-    overflow: hidden;
   
     color: rgba(135, 134, 134, 1);
-  
   
     font-size: 0.875rem;
     padding-bottom: 6px;
@@ -67,6 +51,12 @@ body {
   
   .login-input mt-2 {
     margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 40px;
+    width: 352.78px;
+    height: 42px;
+    padding: 0 10px;
   }
   
   .btn-continuar {
@@ -92,6 +82,16 @@ body {
   
   .btn-continuar:hover {
     filter: brightness(0.9);
+    border-radius: 20px;
+    background-color: #68de5a;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
   }
   
   .login-forgot-password {
@@ -106,6 +106,8 @@ body {
     font-weight: 500;
   }
   
+  
+ 
   @media screen and (max-width: 460px) {
     .logo-container img {
       width: 70vw;

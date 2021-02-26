@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { LoginService } from '../login/login.service';
+import { Login } from './../login.interface';
+import { AlertService } from './../shared/services/alert/alert.service';
+import { AuthService } from './../shared/services/auth/auth.service';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +19,14 @@ export class HomeComponent implements OnInit {
   signInForm!: FormGroup;
   isLoading: boolean = true;
   isError: boolean = false;
-  
+  login!: Login;
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
+    private homeService: HomeService,
+    private alertService: AlertService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -44,13 +50,13 @@ export class HomeComponent implements OnInit {
     console.log(this.signInForm)
 
     if (this.signInForm.invalid) {
-      
+
       return;
     }
 
     this.checkSignUp();
   }
-  
+
   initializeForm() {
     this.signInForm = this.formBuilder.group({
       cpf: ['', Validators.required],
@@ -64,7 +70,13 @@ export class HomeComponent implements OnInit {
   checkSignUp() {
     this.isLoading = true;
     this.isError = false;
-    this.loginService.signIn(this.signInForm.value)
+    this.login = {
+      senha: this.signInForm.value.senha,
+      usuario: this.signInForm.value.login
+
+    }
+    console.log(this.signInForm)
+    this.homeService.signIn(this.signInForm.value)
       .pipe(
         take(1),
         finalize(() => this.isLoading = false)
@@ -78,16 +90,14 @@ export class HomeComponent implements OnInit {
   onSuccess(response: any) {
     console.log(response)
     this.isError = false;
-    
+
     this.router.navigate(['dashboard']);
   }
 
   onError(error: any) {
     this.isError = true;
-    console.log(error);
-    console.log(error.error);
 
     this.signInError = error.error.error
-    console.log(this.signInError);
-  } 
+    this.alertService.error('', this.signInError = error.error.error)
+  }
 }

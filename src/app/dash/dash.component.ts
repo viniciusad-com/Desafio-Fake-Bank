@@ -5,6 +5,7 @@ import { finalize, take } from 'rxjs/operators';
 import { Dashboard } from '../dashboard.interface';
 import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { ContaDto } from './../contaDto.interface';
 import { DashService } from './dash.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class DashComponent implements OnInit {
 
   isLoading: boolean = true;
   isError: boolean = false;
-  
+
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -27,7 +28,7 @@ export class DashComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
     this.validateCredentials();
     console.log(this.session);
     console.log(this.session.token);
@@ -59,14 +60,28 @@ export class DashComponent implements OnInit {
       )
   }
 
+  
+
   onSuccess(response: any) {
-    console.log('VERRRRRRRRRRRRRR',response);
+    console.log('VERRRRRRRRRRRRRR', response);
     this.dashboard = response;
-    
+
   }
 
-  
+
   onError(error: any) {
     console.log(error)
+  }
+
+  countBankValue(contaDto: ContaDto) {
+    if (!contaDto.lancamentos) {
+      return 0;
+    } else {
+      let valueLancamento: number = 0;
+      for (let lancamento of this.dashboard.contaBanco.lancamentos) {
+        valueLancamento += lancamento.valor;
+      }
+      return valueLancamento;
+    }
   }
 }

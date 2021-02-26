@@ -6,6 +6,8 @@ import { finalize, take } from 'rxjs/operators';
 
 import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { Login } from './../login.interface';
+import { AlertService } from './../shared/services/alert/alert.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -18,6 +20,10 @@ export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
   isError: boolean = false;
+  login: Login = {
+    senha: '',
+    usuario: '',
+  };
 
   loginForm!: FormGroup;
 
@@ -29,10 +35,13 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private formBuilder: FormBuilder,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
+    this.checkLoginInitial();
     this.initializeForm();
+    this.checkLoginFinal();
   }
 
   validateAllForms() {
@@ -41,6 +50,18 @@ export class LoginComponent implements OnInit {
 
       control?.markAllAsTouched();
     })
+  }
+
+  checkLoginInitial() {
+    if (this.authService.getLogin()) {
+      this.login = this.authService.getLogin()
+    }
+  }
+
+  checkLoginFinal() {
+    if (this.loginForm) {
+      this.onSubmit();
+    }
   }
 
   onSubmit() {
@@ -54,8 +75,8 @@ export class LoginComponent implements OnInit {
 
   initializeForm() {
     this.loginForm = this.formBuilder.group({
-      usuario: ['', Validators.required],
-      senha: ['', Validators.required]
+      usuario: [this.login.usuario, Validators.required],
+      senha: [this.login.senha, Validators.required]
     })
   }
 
@@ -70,8 +91,8 @@ export class LoginComponent implements OnInit {
 
   onError(error: any) {
     this.isError = true;
-    console.log(error);
-  } 
+    this.alertService.error('', error.error.error)
+  }
 
   checkLogin() {
     this.isLoading = true;
@@ -90,7 +111,7 @@ export class LoginComponent implements OnInit {
   onRecoveryPass() {
     this.router.navigate(['recovery-pass']);
   }
-  
+
   onSignUp() {
     this.router.navigate(['home']);
   }
