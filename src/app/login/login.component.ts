@@ -13,11 +13,11 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
   isError: boolean = false;
-
 
   loginForm!: FormGroup;
 
@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.initializeForm();
   }
-
 
   validateAllForms() {
     Object.keys(this.loginForm.controls).forEach(fields => {
@@ -53,7 +52,6 @@ export class LoginComponent implements OnInit {
     this.checkLogin();
   }
 
-
   initializeForm() {
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
@@ -64,18 +62,16 @@ export class LoginComponent implements OnInit {
   onSuccess(response: Sessao) {
     console.log(response)
     this.authService.setSession(response)
-     this.authService.setToken(response.token)
-     this.isError = false;
+    this.authService.setToken(response.token)
+    this.isError = false;
 
-      
-     
-     this.router.navigate(['dashboard']);
-   }
+    this.router.navigate(['dashboard']);
+  }
 
-    onError(error: any) {
-     this.isError = true;
-     console.log(error);
-   } 
+  onError(error: any) {
+    this.isError = true;
+    console.log(error);
+  } 
 
   checkLogin() {
     this.isLoading = true;
@@ -91,7 +87,6 @@ export class LoginComponent implements OnInit {
       )
   }
 
-
   onRecoveryPass() {
     this.router.navigate(['recovery-pass']);
   }
@@ -99,7 +94,4 @@ export class LoginComponent implements OnInit {
   onSignUp() {
     this.router.navigate(['home']);
   }
-  
-
-
 }

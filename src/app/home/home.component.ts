@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit {
     this.initializeForm();
   }
 
-  onSignIn() {
-    this.router.navigate(['login']);
+  goToLogin() {
+    this.router.navigate([`login`]);
   }
 
   validateAllForms() {
@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit {
     })
   }
 
-
   checkSignUp() {
     this.isLoading = true;
     this.isError = false;
@@ -78,17 +77,17 @@ export class HomeComponent implements OnInit {
 
   onSuccess(response: any) {
     console.log(response)
-     this.isError = false;
-     
-     this.router.navigate(['dashboard']);
-   }
+    this.isError = false;
+    
+    this.router.navigate(['dashboard']);
+  }
 
-    onError(error: any) {
-     this.isError = true;
-     console.log(error);
-     console.log(error.error);
+  onError(error: any) {
+    this.isError = true;
+    console.log(error);
+    console.log(error.error);
 
-     this.signInError = error.error.error
-     console.log(this.signInError);
-   } 
+    this.signInError = error.error.error
+    console.log(this.signInError);
+  } 
 }
