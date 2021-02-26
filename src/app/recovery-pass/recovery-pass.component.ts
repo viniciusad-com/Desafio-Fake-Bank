@@ -18,7 +18,6 @@ export class RecoveryPassComponent implements OnInit {
   isLoading: boolean = false;
   isError: boolean = false;
 
-
   recoveryForm!: FormGroup;
 
   sessao!: Sessao;
@@ -31,10 +30,10 @@ export class RecoveryPassComponent implements OnInit {
     private recoveryPassService: RecoveryPassService,
   ) { }
 
+
   ngOnInit(): void {
     this.initializeForm();
   }
-
 
   validateAllForms() {
     Object.keys(this.recoveryForm.controls).forEach(fields => {
@@ -90,7 +89,4 @@ export class RecoveryPassComponent implements OnInit {
         error => this.onError(error)
       )
   }
-  
-
-
 }

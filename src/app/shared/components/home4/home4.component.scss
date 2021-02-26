@@ -1,11 +1,14 @@
 body {
-  width: 100vw;
   height: 100vh;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
 
   font: 400 1rem "Roboto", sans-serif;
   color: rgba(255, 255, 255, 1);
   background-color:  rgba(104, 222, 90, 1);
-  // background-image: url(../../../assets/home4-bg-transparent.png);
+  background-image: url("../../../assets/home4-bg-transparent.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: scroll;
@@ -28,5 +31,16 @@ p {
   font-size: 1.4375rem;
 
   margin-left: 170px;
+}
+
+@media (max-width: 720px) {
+  h3 {
+    font-size: 2rem;
+  }
+
+  p { 
+    width: 229px;
+    font-size: 1rem;
+  }
 }
 

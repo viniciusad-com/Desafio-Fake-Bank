@@ -15,6 +15,7 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
@@ -23,7 +24,6 @@ export class LoginComponent implements OnInit {
     senha: '',
     usuario: '',
   };
-
 
   loginForm!: FormGroup;
 
@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
     this.initializeForm();
     this.checkLoginFinal();
   }
-
 
   validateAllForms() {
     Object.keys(this.loginForm.controls).forEach(fields => {
@@ -74,7 +73,6 @@ export class LoginComponent implements OnInit {
     this.checkLogin();
   }
 
-
   initializeForm() {
     this.loginForm = this.formBuilder.group({
       usuario: [this.login.usuario, Validators.required],
@@ -87,8 +85,6 @@ export class LoginComponent implements OnInit {
     this.authService.setSession(response)
     this.authService.setToken(response.token)
     this.isError = false;
-
-
 
     this.router.navigate(['dashboard']);
   }
@@ -112,7 +108,6 @@ export class LoginComponent implements OnInit {
       )
   }
 
-
   onRecoveryPass() {
     this.router.navigate(['recovery-pass']);
   }
@@ -120,7 +115,4 @@ export class LoginComponent implements OnInit {
   onSignUp() {
     this.router.navigate(['home']);
   }
-
-
-
 }

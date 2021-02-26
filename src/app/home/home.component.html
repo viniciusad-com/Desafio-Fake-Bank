@@ -1,6 +1,6 @@
 <body>
     <div class="logo-container">
-      <a href="./fake-bank-home.html">
+      <a href="/home">
         <img src="../assets/logo-gama-academy-horizontal.png">
       </a>
     </div>
@@ -9,11 +9,11 @@
       <p>Fake Bank é um projeto de nossos alunos.</p>
       <p>Já tem conta?</p>
       <button 
-          class="btn-acessar" 
-          href="./fake-bank-home.html"
-          (click)="onSignIn()">
-          Acessar
-          <img class="pr-3" src="../../assets/arrow-accesso.svg">
+        class="btn-acessar" 
+        (click)="goToLogin()"
+      >
+        Acessar
+        <img class="pr-3" src="../../assets/arrow-accesso.svg">
       </button>
     </div>
 
@@ -40,7 +40,7 @@
           <input 
             formControlName= "nome" 
             class="input-cadastro"
-            placeholder="Digite seu nome completo" 
+            placeholder="Nome completo" 
             type="text" 
             required
           >
@@ -61,11 +61,11 @@
             required
           >
           <button 
-            (click)="onSubmit()"
             class="btn-continuar"
+            (click)="onSubmit()"
           >
-            <p class="pl-3 m-0">Continuar</p>
-            <img src="../../assets/arrow-accesso-grey.svg">
+            Continuar
+            <img class="pr-3" src="../../assets/arrow-accesso-grey.svg">
           </button>
         </form>
       </div>

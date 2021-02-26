@@ -1,6 +1,8 @@
 body {
-  width: 100vw;
   height: 100vh;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
 
   font: 400 1rem "Roboto", sans-serif;
 
@@ -38,4 +40,20 @@ body {
   font-size: 11.625rem;
   font-weight: 500;
   line-height: 218px;
+}
+
+@media (max-width: 720px) {
+  .left-container h3 {
+    font-size: 2rem;
+  }
+
+  .left-container p { 
+    width: 229px;
+
+    font-size: 1rem;
+  }
+
+  .right-container h1 {
+    font-size: 8rem;
+  }
 }

@@ -1,45 +1,54 @@
 <body>
     <div class="logo-container">
-        <a href="./fake-bank-home.html">
-            <img src="../assets/logo-gama-academy-horizontal.png">
-        </a>
-    </div>
 
+      <a href="/home">
+        <img src="../assets/logo-gama-academy-horizontal.png">
+      </a>
+    </div>
+  
     <div class="card login-card mx-auto">
-
-        <div class="card-body pt-2">
-            <h5 class="card-title text-center">Faça seu login</h5>
-
-            <form [formGroup]="recoveryForm" class="form-group col-0 p-3" method="POST">
-                <input 
-                    formControlName="usuario"
-                    class="login-input mt-2" 
-                    placeholder="Digite seu usuário" 
-                    type="text"
-                    name="user" 
-                    required="">
-                <input 
-                    formControlName="senha"
-                    class="login-input mt-5" 
-                    placeholder="Digite sua senha" 
-                    type="password"
-                    name="password" 
-                    required="">
-                <input 
-                    formControlName="senha" 
-                    class="login-input mt-5" 
-                    placeholder="Digite sua senha" 
-                    type="password"
-                    name="password" 
-                    required="">
-                <div class="pt-5">
-                    <button (click)="onSubmit()" class="btn-continuar">
-                        <p class="pl-3 m-0">Enviar</p>
-                        <img class="pr-3" src="../../assets/arrow-login.svg">
-                    </button>
-                </div>
-            </form>
-        </div>
+      <div class="card-body pt-2">
+        <h5 class="card-title text-center">Esqueci minha senha</h5>
+        <p>Confirme seu CPF e escolha sua nova senha.</p>
+        <form [formGroup]="resetPassForm" 
+          class="form-group col-0 p-3" 
+          method="POST"
+        >
+          <input 
+            formControlName = "usuario" 
+            class="login-input mt-2" 
+            placeholder="Confirme seu CPF" 
+            type="text" 
+            name="user" 
+            required
+          >
+          <input 
+            formControlName = "senha" 
+            class="login-input mt-5" 
+            placeholder="Digite sua nova senha" 
+            type="password" 
+            name="password" 
+            required
+          >
+          <input 
+          formControlName = "senha" 
+          class="login-input mt-5" 
+          placeholder="Confirme sua nova senha" 
+          type="password" 
+          name="password" 
+          required
+        >
+          <div class="pt-5">
+            <button (click)="onSubmit()"
+              class="btn-continuar" 
+              href="./fake-bank-home.html"
+            >
+              Continuar
+              <img class="pr-3" src="../../assets/arrow-login.svg">
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-
-</body>
+  </body>
+ 
