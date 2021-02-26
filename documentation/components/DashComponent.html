@@ -1,0 +1,1144 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Fake-Bank documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Fake-Bank documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DashComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/dash/dash.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dash</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./dash.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dash.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dashboard">dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#isError">isError</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#session">session</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkDashboard">checkDashboard</a>
+                            </li>
+                            <li>
+                                <a href="#countBankValue">countBankValue</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onError">onError</a>
+                            </li>
+                            <li>
+                                <a href="#onSuccess">onSuccess</a>
+                            </li>
+                            <li>
+                                <a href="#validateCredentials">validateCredentials</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auth: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dashService: <a href="../injectables/DashService.html">DashService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/dash/dash.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dashService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashService.html" target="_self" >DashService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkDashboard"></a>
+                    <span class="name">
+                        <b>
+                            checkDashboard
+                        </b>
+                        <a href="#checkDashboard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkDashboard()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/dash/dash.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countBankValue"></a>
+                    <span class="name">
+                        <b>
+                            countBankValue
+                        </b>
+                        <a href="#countBankValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>countBankValue(contaDto: <a href="../interfaces/ContaDto.html">ContaDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/dash/dash.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>contaDto</td>
+                                    <td>
+                                                <code><a href="../interfaces/ContaDto.html" target="_self" >ContaDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/dash/dash.component.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onError"></a>
+                    <span class="name">
+                        <b>
+                            onError
+                        </b>
+                        <a href="#onError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onError(error: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/dash/dash.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>error</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSuccess"></a>
+                    <span class="name">
+                        <b>
+                            onSuccess
+                        </b>
+                        <a href="#onSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSuccess(response: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/dash/dash.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>response</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateCredentials"></a>
+                    <span class="name">
+                        <b>
+                            validateCredentials
+                        </b>
+                        <a href="#validateCredentials"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validateCredentials()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/dash/dash.component.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dashboard"></a>
+                        <span class="name">
+                            <b>
+                            dashboard</b>
+                            <a href="#dashboard"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Dashboard.html" target="_self" >Dashboard</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/dash/dash.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isError"></a>
+                        <span class="name">
+                            <b>
+                            isError</b>
+                            <a href="#isError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/dash/dash.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/dash/dash.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="session"></a>
+                        <span class="name">
+                            <b>
+                            session</b>
+                            <a href="#session"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Sessao.html" target="_self" >Sessao</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/dash/dash.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { finalize, take } from &#x27;rxjs/operators&#x27;;
+
+import { Dashboard } from &#x27;../dashboard.interface&#x27;;
+import { Sessao } from &#x27;../sessao.interface&#x27;;
+import { AuthService } from &#x27;../shared/services/auth/auth.service&#x27;;
+import { ContaDto } from &#x27;./../contaDto.interface&#x27;;
+import { DashService } from &#x27;./dash.service&#x27;;
+
+@Component({
+  selector: &#x27;app-dash&#x27;,
+  templateUrl: &#x27;./dash.component.html&#x27;,
+  styleUrls: [&#x27;./dash.component.scss&#x27;]
+})
+export class DashComponent implements OnInit {
+
+  dashboard !: Dashboard;
+  session !: Sessao;
+
+  isLoading: boolean &#x3D; true;
+  isError: boolean &#x3D; false;
+
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private dashService: DashService,
+  ) { }
+
+  ngOnInit(): void {
+
+    this.validateCredentials();
+    console.log(this.session);
+    console.log(this.session.token);
+    this.checkDashboard();
+  }
+
+  validateCredentials() {
+    const sessionLocale &#x3D; this.auth.getSession();
+    if (sessionLocale) {
+      this.session &#x3D; sessionLocale
+      return;
+    }
+
+    this.router.navigate([&#x27;login&#x27;])
+    return;
+  }
+
+  checkDashboard() {
+    this.isLoading &#x3D; true;
+    this.isError &#x3D; false;
+    this.dashService.getDash(this.session)
+      .pipe(
+        take(1),
+        finalize(() &#x3D;&gt; this.isLoading &#x3D; false)
+      )
+      .subscribe(
+        response &#x3D;&gt; this.onSuccess(response),
+        error &#x3D;&gt; this.onError(error)
+      )
+  }
+
+  
+
+  onSuccess(response: any) {
+    console.log(&#x27;VERRRRRRRRRRRRRR&#x27;, response);
+    this.dashboard &#x3D; response;
+
+  }
+
+
+  onError(error: any) {
+    console.log(error)
+  }
+
+  countBankValue(contaDto: ContaDto) {
+    if (!contaDto.lancamentos) {
+      return 0;
+    } else {
+      let valueLancamento: number &#x3D; 0;
+      for (let lancamento of this.dashboard.contaBanco.lancamentos) {
+        valueLancamento +&#x3D; lancamento.valor;
+      }
+      return valueLancamento;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+    &lt;div class&#x3D;&quot;sidenav&quot;&gt;
+        &lt;div class&#x3D;&quot;logo-container&quot;&gt;
+            &lt;a href&#x3D;&quot;#&quot;&gt;
+            &lt;img src&#x3D;&quot;../../assets/dash-logo-gama-academy-square.png&quot; alt&#x3D;&quot;Logo Gama Academy&quot; title&#x3D;&quot;Logo Gama Academy&quot;&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;types-container&quot; alt&#x3D;&quot;Depósitos&quot; title&#x3D;&quot;Depósitos&quot;&gt;
+            &lt;div class&#x3D;&quot;pix&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/Pix.png&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;types&quot;&gt;
+                &lt;a href&#x3D;&quot;#&quot;&gt;Depósitos&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;types-container&quot; alt&#x3D;&quot;Planos&quot; title&#x3D;&quot;Planos&quot;&gt;
+            &lt;div class&#x3D;&quot;pix&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/Pix.png&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;types&quot;&gt;
+                &lt;a href&#x3D;&quot;#&quot;&gt;Planos&lt;/a&gt;
+            &lt;/div&gt; 
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;types-container&quot; alt&#x3D;&quot;Pagamentos&quot; title&#x3D;&quot;Pagamentos&quot;&gt;
+            &lt;div class&#x3D;&quot;pix&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/Pix.png&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;types&quot;&gt;
+                &lt;a href&#x3D;&quot;#&quot;&gt;Pagamentos&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;types-container&quot; alt&#x3D;&quot;Transações&quot; title&#x3D;&quot;Transações&quot;&gt;
+            &lt;div class&#x3D;&quot;pix&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/Pix.png&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;types&quot;&gt;
+                &lt;a href&#x3D;&quot;#&quot;&gt;Transações&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id&#x3D;&quot;main&quot; class&#x3D;&quot;main&quot;&gt;
+        &lt;div class&#x3D;&quot;welcome-text&quot;&gt;
+            &lt;p class&#x3D;&quot;col&quot;&gt; Olá {{ session.usuario.nome }}, seja bem vindo(a)!
+                &lt;a class&#x3D;&quot;float-right&quot; href&#x3D;&quot;#&quot;&gt;
+                    &lt;img class&#x3D;&quot;eye&quot; src&#x3D;&quot;../../assets/eye-top.png&quot; alt&#x3D;&quot;ocultar extrato&quot; title&#x3D;&quot;ocultar extrato&quot;&gt;
+                &lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;card-group&quot;&gt;
+            &lt;div class&#x3D;&quot;card conta-card m-4 rounded-lg&quot;&gt;
+                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;p&gt;&lt;img src&#x3D;&quot;../../assets/dollar.png&quot; alt&#x3D;&quot;Saldo conta&quot; title&#x3D;&quot;Saldo conta&quot;&gt; Conta &lt;/p&gt;
+                    &lt;p&gt; Saldo disponível &lt;/p&gt;
+                    &lt;h1 class&#x3D;&quot;conta-saldo&quot;&gt; {{ dashboard.contaBanco.saldo | currency:&#x27;BRL&#x27; }} &lt;/h1&gt;
+                    &lt;div class&#x3D;&quot;row pt-4 justify-content-around&quot;&gt;
+                        &lt;p class&#x3D;&quot;pt-2&quot;&gt; Transações &lt;/p&gt;
+                        &lt;h1 class&#x3D;&quot;transacoes&quot;&gt; {{ countBankValue(dashboard.contaBanco) | currency:&#x27;BRL&#x27; }} &lt;/h1&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class&#x3D;&quot;card conta-card m-4 rounded-lg&quot;&gt;
+                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;p&gt;&lt;img src&#x3D;&quot;../../assets/credit-card.png&quot; alt&#x3D;&quot;Saldo crédito&quot; title&#x3D;&quot;Saldo crédito&quot;&gt; Conta Crédito &lt;/p&gt;
+                    &lt;p&gt; Saldo disponível &lt;/p&gt;
+                    &lt;h1 class&#x3D;&quot;credito-saldo&quot;&gt; {{ dashboard.contaCredito.saldo | currency:&#x27;BRL&#x27; }} &lt;/h1&gt;
+                    &lt;div class&#x3D;&quot;row pt-4 justify-content-around&quot;&gt;
+                        &lt;p class&#x3D;&quot;pt-2&quot;&gt; Limite disponível &lt;/p&gt;
+                        &lt;h1 class&#x3D;&quot;transacoes&quot;&gt; {{ countBankValue(dashboard.contaCredito) | currency:&#x27;BRL&#x27; }} &lt;/h1&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;card-group&quot;&gt;
+            &lt;div class&#x3D;&quot;card transacoes-card m-2 rounded-lg&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;this.dashboard.contaCredito.lancamentos&quot; class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;p&gt;&lt;img src&#x3D;&quot;../../assets/dollar.png&quot; alt&#x3D;&quot;Últimos lançamentos&quot; title&#x3D;&quot;Últimos lançamentos&quot;&gt; Últimos lançamentos &lt;/p&gt;
+                    
+                    &lt;div *ngFor&#x3D;&quot;let lancamento of dashboard.contaBanco.lancamentos&quot;&gt;
+                        &lt;p&gt; &lt;img src&#x3D;&quot;../../assets/credit-card2.png&quot; alt&#x3D;&quot;Últimos lançamentos&quot; title&#x3D;&quot;Últimos lançamentos&quot;&gt;
+                            {{ lancamento.descricao  }} 
+                        &lt;/p&gt;
+                        &lt;p&gt; {{ lancamento.conta  }} &lt;/p&gt;
+                        &lt;p&gt; {{ lancamento.valor  }} &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./dash.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font: 400 1rem &quot;Roboto&quot;, sans-serif;
+
+  background: #8c52e5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo-container {
+  position: relative;
+  top: -35px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #68de5a;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding: 50px 10px 0;
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  display: block;
+}
+
+.types-container {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.types {
+  width: 91px;
+  height: 91px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color: #8c52e5;
+  border-radius: 5px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 0 0 12px 4px;
+}
+
+.types:hover {
+  cursor: pointer;
+  background-color: #9e5eff;
+  transition: 275ms ease-in-out;
+}
+
+.pix {
+  position: absolute;
+  background-color: transparent;
+  height: 25px;
+  padding-left: 28px;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.welcome-text {
+  display: flex;
+  padding: 0 20px 0 20px;
+  color: #fff;
+  font-size: 25px;
+}
+.eye:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: 500ms ease-in;
+}
+
+.main {
+  margin: -100px 0 0 150px;
+  box-sizing: border-box;
+}
+
+.conta-card {
+  width: 407.8px;
+  height: 255.05px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background: #fbfbfb;
+}
+.transacoes-card {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 98%;
+  margin: 35px;
+}
+
+.card-body img {
+  padding: 0 15px 0 0;
+}
+
+.card-body p {
+  color: #9b9b9b;
+}
+
+.conta-saldo {
+  font-size: 30px;
+  font-weight: 600;
+  color: #010101;
+}
+
+.credito-saldo {
+  font-size: 30px;
+  font-weight: 600;
+  color: #1783e7;
+}
+
+.transacoes {
+  font-size: 30px;
+  font-weight: 600;
+  color: #68de5a;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><body>    <div class="sidenav">        <div class="logo-container">            <a href="#">            <img src="../../assets/dash-logo-gama-academy-square.png" alt="Logo Gama Academy" title="Logo Gama Academy">            </a>        </div>        <div class="types-container" alt="Depósitos" title="Depósitos">            <div class="pix">                <img src="../../assets/Pix.png">            </div>            <div class="types">                <a href="#">Depósitos</a>            </div>        </div>        <div class="types-container" alt="Planos" title="Planos">            <div class="pix">                <img src="../../assets/Pix.png">            </div>            <div class="types">                <a href="#">Planos</a>            </div>         </div>        <div class="types-container" alt="Pagamentos" title="Pagamentos">            <div class="pix">                <img src="../../assets/Pix.png">            </div>            <div class="types">                <a href="#">Pagamentos</a>            </div>        </div>        <div class="types-container" alt="Transações" title="Transações">            <div class="pix">                <img src="../../assets/Pix.png">            </div>            <div class="types">                <a href="#">Transações</a>            </div>        </div>    </div>    <div id="main" class="main">        <div class="welcome-text">            <p class="col"> Olá {{ session.usuario.nome }}, seja bem vindo(a)!                <a class="float-right" href="#">                    <img class="eye" src="../../assets/eye-top.png" alt="ocultar extrato" title="ocultar extrato">                </a>            </p>        </div>                <div class="card-group">            <div class="card conta-card m-4 rounded-lg">                <div class="card-body">                    <p><img src="../../assets/dollar.png" alt="Saldo conta" title="Saldo conta"> Conta </p>                    <p> Saldo disponível </p>                    <h1 class="conta-saldo"> {{ dashboard.contaBanco.saldo | currency:\'BRL\' }} </h1>                    <div class="row pt-4 justify-content-around">                        <p class="pt-2"> Transações </p>                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaBanco) | currency:\'BRL\' }} </h1>                    </div>                </div>            </div>                        <div class="card conta-card m-4 rounded-lg">                <div class="card-body">                    <p><img src="../../assets/credit-card.png" alt="Saldo crédito" title="Saldo crédito"> Conta Crédito </p>                    <p> Saldo disponível </p>                    <h1 class="credito-saldo"> {{ dashboard.contaCredito.saldo | currency:\'BRL\' }} </h1>                    <div class="row pt-4 justify-content-around">                        <p class="pt-2"> Limite disponível </p>                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaCredito) | currency:\'BRL\' }} </h1>                    </div>                </div>            </div>        </div>                <div class="card-group">            <div class="card transacoes-card m-2 rounded-lg">                <div *ngIf="this.dashboard.contaCredito.lancamentos" class="card-body">                    <p><img src="../../assets/dollar.png" alt="Últimos lançamentos" title="Últimos lançamentos"> Últimos lançamentos </p>                                        <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">                        <p> <img src="../../assets/credit-card2.png" alt="Últimos lançamentos" title="Últimos lançamentos">                            {{ lancamento.descricao  }}                         </p>                        <p> {{ lancamento.conta  }} </p>                        <p> {{ lancamento.valor  }} </p>                    </div>                </div>            </div>        </div>    </div></body></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashComponent', 'selector': 'app-dash'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'Home2Component', 'selector': 'app-home2'},{'name': 'Home3Component', 'selector': 'app-home3'},{'name': 'Home4Component', 'selector': 'app-home4'},{'name': 'Home5Component', 'selector': 'app-home5'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RecoveryPassComponent', 'selector': 'app-recovery-pass'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

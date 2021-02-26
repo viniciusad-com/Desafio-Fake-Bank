@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "Fake-Bank",
   "version": "0.0.0",
 
   "scripts": {
@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p tsconfig.json src",
+    "generate-docs": "compodoc -p src/tsconfig.json",
+    "serve-docs": "compodoc -s src/tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -24,8 +27,7 @@
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.15.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3",
-    "sweetalert2": "10.15.5"
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.0",
