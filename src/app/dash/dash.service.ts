@@ -19,6 +19,8 @@ export class DashService {
 
     getDash(session: Sessao) {
 
+      const mydate = new Date();
+
       let headers = new HttpHeaders();
       headers = headers.append('Authorization', session.token);
       

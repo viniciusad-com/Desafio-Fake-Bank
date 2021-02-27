@@ -37,13 +37,16 @@
                 <a href="#">Transações</a>
             </div>
         </div>
+        <button class="btn btn-danger m-2" (click)="onLogout()">
+            Desconectar
+        </button>
     </div>
 
     <div id="main" class="main">
         <div class="welcome-text">
             <p class="col"> Olá {{ session.usuario.nome }}, seja bem vindo(a)!
-                <a class="float-right" href="#">
-                    <img class="eye" src="../../assets/eye-top.png" alt="ocultar extrato" title="ocultar extrato">
+                <a class="float-right" (click)="onShowValues()">
+                    <img class="eye"  src="../../assets/eye-top.png" alt="ocultar extrato" title="ocultar extrato">
                 </a>
             </p>
         </div>
@@ -53,10 +56,10 @@
                 <div class="card-body">
                     <p><img src="../../assets/dollar.png" alt="Saldo conta" title="Saldo conta"> Conta </p>
                     <p> Saldo disponível </p>
-                    <h1 class="conta-saldo"> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </h1>
+                    <h1 *ngIf="showValues" class="conta-saldo"> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </h1>
                     <div class="row pt-4 justify-content-around">
                         <p class="pt-2"> Transações </p>
-                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaBanco) | currency:'BRL' }} </h1>
+                        <h1 *ngIf="showValues" class="transacoes"> {{ countBankValue(dashboard.contaBanco) | currency:'BRL' }} </h1>
                     </div>
                 </div>
             </div>
@@ -65,10 +68,10 @@
                 <div class="card-body">
                     <p><img src="../../assets/credit-card.png" alt="Saldo crédito" title="Saldo crédito"> Conta Crédito </p>
                     <p> Saldo disponível </p>
-                    <h1 class="credito-saldo"> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </h1>
+                    <h1 *ngIf="showValues" class="credito-saldo"> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </h1>
                     <div class="row pt-4 justify-content-around">
                         <p class="pt-2"> Limite disponível </p>
-                        <h1 class="transacoes"> {{ countBankValue(dashboard.contaCredito) | currency:'BRL' }} </h1>
+                        <h1 *ngIf="showValues" class="transacoes"> {{ countBankValue(dashboard.contaCredito) | currency:'BRL' }} </h1>
                     </div>
                 </div>
             </div>

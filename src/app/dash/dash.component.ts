@@ -21,6 +21,8 @@ export class DashComponent implements OnInit {
   isLoading: boolean = true;
   isError: boolean = false;
 
+  showValues = false;
+
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -49,6 +51,7 @@ export class DashComponent implements OnInit {
   checkDashboard() {
     this.isLoading = true;
     this.isError = false;
+    console.log('AQUI',this.session)
     this.dashService.getDash(this.session)
       .pipe(
         take(1),
@@ -74,10 +77,19 @@ export class DashComponent implements OnInit {
       return 0;
     } else {
       let valueLancamento: number = 0;
-      for (let lancamento of this.dashboard.contaBanco.lancamentos) {
+      for (let lancamento of contaDto.lancamentos) {
         valueLancamento += lancamento.valor;
       }
       return valueLancamento;
     }
+  }
+
+  onShowValues() {
+    this.showValues = !this.showValues;
+    console.log(this.showValues);
+  }
+
+  onLogout() {
+    this.auth.logout();
   }
 }

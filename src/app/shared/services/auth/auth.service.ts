@@ -102,12 +102,8 @@ export class AuthService {
     }
  
 
-  /* logout() {
-    const y: string = null as any;
-    const x: Usuario = null as any;
-    this.user = x;
-    this.token = y;
+  logout() {
     localStorage.clear();
     this.router.navigate(['login']);
-  } */
+  }
 }

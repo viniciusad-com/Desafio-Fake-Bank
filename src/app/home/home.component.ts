@@ -8,6 +8,8 @@ import { AlertService } from './../shared/services/alert/alert.service';
 import { AuthService } from './../shared/services/auth/auth.service';
 import { HomeService } from './home.service';
 
+import { HomeValidators } from './home-validators';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -58,11 +60,14 @@ export class HomeComponent implements OnInit {
 
   initializeForm() {
     this.signInForm = this.formBuilder.group({
-      cpf: ['', Validators.required],
+      cpf: ['', Validators.compose([Validators.required,HomeValidators.CPFValidator])],
       login: ['', Validators.required],
       nome: ['', Validators.required],
       senha: ['', Validators.required],
       confirmacao: ['', Validators.required],
+    }, 
+    {
+      Validators: HomeValidators.matchPassword,
     })
   }
 
@@ -89,6 +94,7 @@ export class HomeComponent implements OnInit {
   onSuccess(response: any) {
     console.log(response)
     this.isError = false;
+    this.authService.setLogin(this.login);
 
     this.router.navigate(['dashboard']);
   }
