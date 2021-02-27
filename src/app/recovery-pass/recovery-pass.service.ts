@@ -1,9 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlteraSenha } from '../alteraSenha.interface';
-import { AlteraSenhaResponse } from '../alteraSenhaResponse.interface';
+
+import { AlteraSenha } from '../models/alteraSenha.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { environment } from './../../environments/environment';
+import { AlteraSenhaResponse } from './../models/alteraSenhaResponse.interface';
 
 @Injectable({
   providedIn: 'root'
