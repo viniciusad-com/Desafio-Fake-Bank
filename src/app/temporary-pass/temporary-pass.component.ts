@@ -5,6 +5,7 @@ import { finalize, take } from 'rxjs/operators';
 
 import { Sessao } from '../models/sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { AlertService } from './../shared/services/alert/alert.service';
 import { TemporaryPassService } from './temporary-pass.service';
 
 @Component({
@@ -26,6 +27,7 @@ export class TemporaryPassComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private temporaryPassService: TemporaryPassService,
+    private alertService: AlertService,
   ) { }
 
 
@@ -69,6 +71,7 @@ export class TemporaryPassComponent implements OnInit {
   onError(error: any) {
     this.isError = true;
     console.log(error);
+    this.alertService.error('', error.error.error)
   } 
 
   checkTemporaryPass() {
