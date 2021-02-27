@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 import { Sessao } from 'src/app/models/sessao.interface';
 
-import { AuthService } from '../shared/services/auth/auth.service';
-import { Login } from './../models/login.interface';
-import { AlertService } from './../shared/services/alert/alert.service';
+import { Login } from '../../models/login.interface';
+import { AlertService } from '../../shared/services/alert/alert.service';
+import { AuthService } from '../../shared/services/auth/auth.service';
 import { LoginService } from './login.service';
 
 @Component({

@@ -26,6 +26,10 @@ export class AuthService {
       this.login = login
       localStorage.setItem('login', JSON.stringify(login));
     }
+
+    isLogged() {
+      return this.getLogin() && this.getToken ? true : false;
+    }
   
     getLogin() {
       if (this.login) {
@@ -103,7 +107,10 @@ export class AuthService {
  
 
   logout() {
+    const x = null as any;
+    this.login = x;
+    this.token = x;
     localStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['home']);
   }
 }

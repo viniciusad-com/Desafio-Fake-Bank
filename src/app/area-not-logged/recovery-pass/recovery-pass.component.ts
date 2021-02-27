@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { AuthService } from '../shared/services/auth/auth.service';
-import { AlertService } from './../shared/services/alert/alert.service';
+import { AlertService } from '../../shared/services/alert/alert.service';
+import { AuthService } from '../../shared/services/auth/auth.service';
 import { RecoveryPassService } from './recovery-pass.service';
 
 @Component({

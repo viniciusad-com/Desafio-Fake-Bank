@@ -1,37 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashComponent } from './dash/dash.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RecoveryPassComponent } from './recovery-pass/recovery-pass.component';
-import { TemporaryPassComponent } from './temporary-pass/temporary-pass.component';
+import { IsLoggedGuard } from './shared/guards/is-logged/is-logged.guard';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  } ,  { 
-    path: 'login',
-    component: LoginComponent
-  }, {
-    path: 'home',
-    component: HomeComponent,
-  }, {
-    path: 'temporary-pass',
-    component: TemporaryPassComponent
-  },{
-    path: 'recovery-pass',
-    component: RecoveryPassComponent
-  }, {
-    path: 'dashboard',
-    component: DashComponent,
-  }, {
-    path: '**',
-    component: PageNotFoundComponent
-  }
+const routes: Routes = [{
+  path: '',
+  loadChildren: () => import('./area-not-logged/area-not-logged.module').then(m => m.AreaNotLoggedModule),
+  // canActivate: [IsNotLoggedGuard]
+}, {
+  path: 'dashboard',
+  loadChildren: () => import('./dash/dash.module').then(m => m.DashModule),
+  canActivate: [IsLoggedGuard]
+}, {
+  path: '**',
+  component: PageNotFoundComponent
+}
 ];
 
 @NgModule({
