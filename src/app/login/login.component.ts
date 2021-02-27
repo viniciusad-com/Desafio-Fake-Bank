@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
+import { Sessao } from 'src/app/models/sessao.interface';
 
-import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
-import { Login } from './../login.interface';
+import { Login } from './../models/login.interface';
 import { AlertService } from './../shared/services/alert/alert.service';
 import { LoginService } from './login.service';
 

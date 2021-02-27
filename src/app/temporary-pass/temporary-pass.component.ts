@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { Sessao } from '../sessao.interface';
+import { Sessao } from '../models/sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { TemporaryPassService } from './temporary-pass.service';
 

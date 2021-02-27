@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-import { Login } from '../login.interface';
-import { Sessao } from '../sessao.interface';
+import { Login } from '../models/login.interface';
+import { Sessao } from '../models/sessao.interface';
 
 @Injectable({
   providedIn: 'root'

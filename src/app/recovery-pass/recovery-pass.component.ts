@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { Sessao } from '../sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { AlertService } from './../shared/services/alert/alert.service';
 import { RecoveryPassService } from './recovery-pass.service';
 
 @Component({
@@ -24,6 +24,7 @@ export class RecoveryPassComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private recoveryPassService: RecoveryPassService,
+    private alertService: AlertService,
   ) { }
 
 
@@ -65,6 +66,7 @@ export class RecoveryPassComponent implements OnInit {
   onError(error: any) {
     this.isError = true;
     console.log(error);
+    this.alertService.error('', error.error.error)
   } 
 
   checkRecoveryPass() {

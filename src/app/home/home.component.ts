@@ -3,12 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { Login } from './../login.interface';
+import { Login } from './../models/login.interface';
 import { AlertService } from './../shared/services/alert/alert.service';
 import { AuthService } from './../shared/services/auth/auth.service';
-import { HomeService } from './home.service';
-
 import { HomeValidators } from './home-validators';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',

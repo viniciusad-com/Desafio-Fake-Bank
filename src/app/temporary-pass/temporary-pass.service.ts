@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NovaSenha } from '../novasenha.interface';
 
 import { environment } from '../../environments/environment';
+import { NovaSenha } from '../models/novasenha.interface';
 
 @Injectable({
   providedIn: 'root'

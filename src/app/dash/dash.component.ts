@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 
-import { Dashboard } from '../dashboard.interface';
-import { Sessao } from '../sessao.interface';
+import { Dashboard } from '../models/dashboard.interface';
+import { Sessao } from '../models/sessao.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
-import { ContaDto } from './../contaDto.interface';
+import { ContaDto } from './../models/contaDto.interface';
 import { DashService } from './dash.service';
 
 @Component({

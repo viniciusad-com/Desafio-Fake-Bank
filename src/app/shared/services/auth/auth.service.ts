@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Sessao } from 'src/app/sessao.interface';
+import { Sessao } from 'src/app/models/sessao.interface';
 import { environment } from 'src/environments/environment';
 
-import { Login } from './../../../login.interface';
+import { Login } from './../../../models/login.interface';
 
 @Injectable({
   providedIn: 'root'
