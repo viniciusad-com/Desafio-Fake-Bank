@@ -19,7 +19,6 @@ export class TemporaryPassComponent implements OnInit {
   isError: boolean = false;
 
   temporaryForm!: FormGroup;
-
   sessao!: Sessao;
 
   constructor(

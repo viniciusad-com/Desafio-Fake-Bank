@@ -16,7 +16,7 @@ export class AuthService {
   login!: Login;
   token!: string;
   session!: Sessao;
-  temporaryPass!: string;
+  public temporaryPass!: string;
 
   constructor(
     private http: HttpClient, 
