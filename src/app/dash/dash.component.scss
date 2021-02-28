@@ -23,7 +23,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #68de5a;
+  background-color: #63DC3F;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding: 50px 10px 0;
 }
@@ -126,4 +126,36 @@ body {
   font-size: 30px;
   font-weight: 600;
   color: #68de5a;
+}
+
+.btn-logout {
+  color:#fbfbfb  ;
+  background-color: #8c52e5;
+  font-weight: 300;
+}
+
+.btn-logout:hover {
+  cursor: pointer;
+  background-color: #9e5eff;
+  transition: 275ms ease-in-out;
+}
+
+.lancamento {
+  color: #010101;
+}
+
+.lancamento p {
+  font-size: 18px;
+  margin:0;
+  margin-bottom: 7.5px;
+}
+
+.lancamento h5 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.lancamento h6 {
+  font-size: 16px;
+  font-weight: bold;
 }

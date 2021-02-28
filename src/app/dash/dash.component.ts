@@ -32,8 +32,6 @@ export class DashComponent implements OnInit {
   ngOnInit(): void {
 
     this.validateCredentials();
-    console.log(this.session);
-    console.log(this.session.token);
     this.checkDashboard();
   }
 
@@ -51,7 +49,6 @@ export class DashComponent implements OnInit {
   checkDashboard() {
     this.isLoading = true;
     this.isError = false;
-    console.log('AQUI',this.session)
     this.dashService.getDash(this.session)
       .pipe(
         take(1),
@@ -64,7 +61,6 @@ export class DashComponent implements OnInit {
   }
 
   onSuccess(response: any) {
-    console.log('VERRRRRRRRRRRRRR', response);
     this.dashboard = response;
   }
 
@@ -86,7 +82,6 @@ export class DashComponent implements OnInit {
 
   onShowValues() {
     this.showValues = !this.showValues;
-    console.log(this.showValues);
   }
 
   onLogout() {

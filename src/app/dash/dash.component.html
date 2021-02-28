@@ -37,7 +37,7 @@
                 <a href="#">Transações</a>
             </div>
         </div>
-        <button class="btn btn-danger m-2" (click)="onLogout()">
+        <button class="btn btn-logout m-2 mt-4" (click)="onLogout()">
             Desconectar
         </button>
     </div>
@@ -57,9 +57,11 @@
                     <p><img src="../../assets/dollar.png" alt="Saldo conta" title="Saldo conta"> Conta </p>
                     <p> Saldo disponível </p>
                     <h1 *ngIf="showValues" class="conta-saldo"> {{ dashboard.contaBanco.saldo | currency:'BRL' }} </h1>
+                    <h1 *ngIf="!showValues" class="conta-saldo"> R$ - </h1>
                     <div class="row pt-4 justify-content-around">
                         <p class="pt-2"> Transações </p>
                         <h1 *ngIf="showValues" class="transacoes"> {{ countBankValue(dashboard.contaBanco) | currency:'BRL' }} </h1>
+                        <h1 *ngIf="!showValues" class="transacoes"> R$ - </h1>
                     </div>
                 </div>
             </div>
@@ -69,9 +71,11 @@
                     <p><img src="../../assets/credit-card.png" alt="Saldo crédito" title="Saldo crédito"> Conta Crédito </p>
                     <p> Saldo disponível </p>
                     <h1 *ngIf="showValues" class="credito-saldo"> {{ dashboard.contaCredito.saldo | currency:'BRL' }} </h1>
+                    <h1 *ngIf="!showValues" class="credito-saldo"> R$ - </h1>
                     <div class="row pt-4 justify-content-around">
                         <p class="pt-2"> Limite disponível </p>
                         <h1 *ngIf="showValues" class="transacoes"> {{ countBankValue(dashboard.contaCredito) | currency:'BRL' }} </h1>
+                        <h1 *ngIf="!showValues" class="transacoes"> R$ - </h1>
                     </div>
                 </div>
             </div>
@@ -81,13 +85,21 @@
             <div class="card transacoes-card m-2 rounded-lg">
                 <div *ngIf="this.dashboard.contaCredito.lancamentos" class="card-body">
                     <p><img src="../../assets/dollar.png" alt="Últimos lançamentos" title="Últimos lançamentos"> Últimos lançamentos </p>
-                    
-                    <div *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
-                        <p> <img src="../../assets/credit-card2.png" alt="Últimos lançamentos" title="Últimos lançamentos">
-                            {{ lancamento.descricao  }} 
-                        </p>
-                        <p> {{ lancamento.conta  }} </p>
-                        <p> {{ lancamento.valor  }} </p>
+                    <div *ngIf="showValues" class="p-2 pl-3">
+                        
+                        <div class="d-flex mb-4" *ngFor="let lancamento of dashboard.contaBanco.lancamentos">
+                            
+                            <p><img src="../../assets/credit-card2.png" alt="Últimos lançamentos" title="Últimos lançamentos"> </p>
+                            
+                            <div class="lancamento">
+                                <h6>{{ lancamento.descricao  }} </h6>
+                                <p> {{ lancamento.conta  }} </p>
+                                <h5> {{ lancamento.valor  | currency:'BRL' }} </h5>
+                            </div>
+
+                            <p class="ml-auto"> {{ lancamento.data | date:"'dia' dd 'de' MMM"}} </p>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
