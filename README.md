@@ -2,7 +2,7 @@
 
 <div align="center"><img src="https://i.ibb.co/pPpgd4V/logo-gama-academy-horizontal.png" alt="logo-gama-academy" border="0"></div>
 
-## Fake Bank | Equipe HeloWorld 🌍
+## Fake Bank | Equipe HelloWorld 🌍
 
 <div align="center"><img src="https://media.giphy.com/media/ovqBNUNVCIMgwCWPzJ/giphy.gif" border="0"></div>
 
