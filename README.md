@@ -4,7 +4,7 @@
 
 ## Fake Bank | Equipe HeloWorld 🌍
 
-<div align="center"><img src="https://i.ibb.co/RBQ788B/SectionA.png" alt="SectionA" border="0"></div>
+<div align="center"><img src="https://i.ibb.co/FXm2jN1/3888afe0a41541a6bccc399a85f5bedd-1614618082173.gif" border="0"></div>
 
 ## Sobre o Projeto 🏦
 
