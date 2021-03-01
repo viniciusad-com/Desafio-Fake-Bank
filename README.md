@@ -27,8 +27,29 @@
 ## API da Aplicação 🤓
 
 > <a href="https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/p">API no Swagger</a>
+
+## Funcionalidades da Aplicação 🙂
+
+  * Cadastro de novos usuários;
+  * Controle de sessão - login;
+  * Redefinição de senha;
+  * Dashboard - listagem de saldo e últimos lançamentos;
+  * Atualização de saldo.
+
+## Requisitos Atendidos na Aplicação
+
+  [x] Uso de SCSS;
+  [x] Boas práticas com componentização;
+  [x] Aplicação responsiva;
+  [x] Uso do local storage;
+  [x] Controle de rotas públicas e privadas;
+  [x] Consumo da API e controle de sessão.
+
+## Deploy da Aplicação 💻
+
+> <a href="https://desafio-fake-bank.vercel.app/home">NuFake da equipe HelloWorld</a>
  
-## Como Instalar a Aplicação
+## Como Instalar a Aplicação ⚙
 
   * Faça download ou clone este repositório:
   
@@ -42,7 +63,7 @@
   npm install
   ```
 
-## Para Rodar a Aplicação
+## Para Rodar a Aplicação ⚙
   
   * Execute no terminal o seguinte comando:
   
@@ -53,10 +74,7 @@
   * Acesse no navegador através do endereço
 
   > http://localhost:4200
-
-## Deploy da Aplicação 💻
-
-> <a href="https://desafio-fake-bank.vercel.app/home">NuFake da equipe HelloWorld</a>
+  
  
 ## Quem é a HelloWorld? 👨‍💻👩‍💻
  
