@@ -12,7 +12,11 @@
 
 ## Stack 🎇
 
-<p align="justify"> Este é um projeto de front-end utilizando AngularJS e SCSS.</p>
+<p align="justify"> Este é um projeto de front-end utilizando:</p>
+  - AngularJS;
+  - SCSS;
+  - Bootstrap.
+<p align="justify"> Projeto criado com [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0. </p>
 
 ## Design da Aplicação 🎨
 
