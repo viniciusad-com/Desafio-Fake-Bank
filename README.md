@@ -3,7 +3,7 @@
 
 ## Colaboradores 👨‍💻👩‍💻
 
-<div align="center">
+<div display="flex">
 
 <a href="https://github.com/bmielki"><img src="https://ca.slack-edge.com/T01KP945A0J-U01MZD4108K-71d51561b32e-512" alt="profile-github-bernardo" height=120 width=120 border="0"></a>
 <p>Bernardo Mielki</p>
