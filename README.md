@@ -36,7 +36,7 @@
   * Dashboard - listagem de saldo e últimos lançamentos;
   * Atualização de saldo.
 
-## Requisitos Atendidos na Aplicação
+## Requisitos Atendidos na Aplicação ✔
 
   - Uso de SCSS;
   - Boas práticas com componentização;
