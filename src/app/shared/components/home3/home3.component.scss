@@ -6,7 +6,7 @@ body {
 
   font: 400 1rem "Roboto", sans-serif;
 
-  background: #8C52E5;
+  background: #8c52e5;
 
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .left-container {
-  color: #FFF;
+  color: #fff;
 }
 
 .left-container h3 {
@@ -42,18 +42,28 @@ body {
   line-height: 218px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .left-container h3 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
-  .left-container p { 
+  .left-container p {
     width: 229px;
 
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .right-container h1 {
-    font-size: 8rem;
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 565px) {
+  .home3 {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
   }
 }

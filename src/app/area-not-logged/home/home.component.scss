@@ -3,8 +3,7 @@
 body {
   height: 100vh;
   max-width: 100vw;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
+  margin: 0;
 
   font: 400 1rem "Roboto", sans-serif;
 
@@ -56,7 +55,7 @@ body {
   font-weight: 500;
   font-size: 1.0625rem;
   line-height: 20px;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +77,7 @@ body {
   border-radius: 8px;
 
   line-height: 14, 06px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,13 +114,13 @@ body {
 
   border-radius: 20px;
   border: none;
-  
+
   background-color: #68de5a;
   color: #ffffff;
   font-weight: 500;
   font-size: 1.0625rem;
   line-height: 20px;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,15 +133,86 @@ body {
   filter: brightness(0.9);
 }
 
-@media (max-width: 1080px) {
-
+@media (max-width: 1060px) {
+  body {
+    overflow: hidden;
+    background-size: auto;
+    width: 100vw;
+    margin: 0;
+    padding: 2em;
+  }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   body {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    background-size: contain;
+    height: 90vh;
+  }
+  .logo-container {
+    visibility: hidden;
+  }
+  .login-container p {
+    padding: 0;
+  }
+  .login-container button {
+    margin: 0;
+  }
+  .register-container {
+    width: 349px;
+    height: 440px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-size: contain;
+    width: 100vw;
+    height: 90vh;
+  }
+  .logo-container {
+    visibility: hidden;
+  }
+  .login-container p {
+    padding: 0;
+  }
+  .login-container button {
+    margin: 0;
+  }
+  .register-container {
+    width: 90%;
+    height: 63%;
+    padding: 5px;
+    margin: 0;
+
+    background: #fff;
+    border-radius: 8px;
+
+    line-height: 14, 06px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+  }
+  .register-container p {
+    font-size: 0.9em;
+    padding: 0;
+  }
+  .register-container button {
+    width: 100%;
+    margin: 0;
   }
 }

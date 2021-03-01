@@ -1,12 +1,10 @@
-body {
-  height: 100vh;
+.home2 {
   max-width: 100vw;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-
+  margin: 0;
+  padding: 2em;
   font: 400 1rem "Roboto", sans-serif;
 
-  background: #EAEAEA;
+  background: #eaeaea;
 
   display: flex;
   align-items: center;
@@ -14,8 +12,8 @@ body {
 }
 
 .background-black {
-  width: 49vw;
-  height: 90vh;
+  width: 50vw;
+  height: 80vh;
   background: #000;
 
   color: rgba(104, 222, 90, 1);
@@ -27,6 +25,7 @@ body {
 }
 
 .background-black h3 {
+  padding: 1em 0 0 0;
   font-size: 2.125rem;
 }
 
@@ -36,13 +35,13 @@ body {
 
 .background-black p {
   font-size: 1.3125rem;
-
   width: 50%;
+  padding: 0 0 1em 0;
 }
 
 .background-white {
-  width: 49vw;
-  height: 90vh;
+  width: 50vw;
+  height: 80vh;
   background: #f8f8f8;
 
   color: rgba(29, 29, 29, 1);
@@ -59,12 +58,12 @@ body {
 
 .background-white p {
   font-size: 1.3125rem;
-
   width: 50%;
 }
 
+//===========================================================================
+
 @media (max-width: 1500px) {
-  
   .background-black h3 {
     font-size: 1.3125rem;
   }
@@ -88,11 +87,6 @@ body {
   .background-white p {
     font-size: 0.875rem;
   }
-
-}
-
-@media (max-width: 1080px) {
-
 }
 
 @media (max-width: 720px) {
@@ -102,5 +96,48 @@ body {
 
   .background-white img {
     width: 240px;
+  }
+}
+
+@media (max-width: 525px) {
+  .home2 {
+    padding: 2em 0;
+    width: 100%;
+  }
+
+  .background-black {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .background-black img {
+    width: 100%;
+  }
+  .background-black p {
+    width: 90%;
+  }
+
+  .background-white {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .background-white img {
+    width: 50%;
+  }
+  .background-white p {
+    width: 90%;
   }
 }
