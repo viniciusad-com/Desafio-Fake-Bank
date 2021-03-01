@@ -38,12 +38,12 @@
 
 ## Requisitos Atendidos na Aplicação
 
-  [x] Uso de SCSS;
-  [x] Boas práticas com componentização;
-  [x] Aplicação responsiva;
-  [x] Uso do local storage;
-  [x] Controle de rotas públicas e privadas;
-  [x] Consumo da API e controle de sessão.
+  - [ x ] Uso de SCSS;
+  - [ x ] Boas práticas com componentização;
+  - [ x ] Aplicação responsiva;
+  - [ x ] Uso do local storage;
+  - [ x ] Controle de rotas públicas e privadas;
+  - [ x ] Consumo da API e controle de sessão.
 
 ## Deploy da Aplicação 💻
 
