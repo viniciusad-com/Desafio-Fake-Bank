@@ -4,8 +4,10 @@
 ## Colaboradores 👨‍💻👩‍💻
 
 <table align="center">
-    <tr><a href="https://github.com/bmielki"><img src="https://ca.slack-edge.com/T01KP945A0J-U01MZD4108K-71d51561b32e-512" alt="profile-github-bernardo" height=120 width=120 border="0"></a></tr>
-    <p>Bernardo Mielki</p>
+   <tr>
+     <td><a href="https://github.com/bmielki"><img src="https://ca.slack-edge.com/T01KP945A0J-U01MZD4108K-71d51561b32e-512" alt="profile-github-bernardo" height=120 width=120 border="0"></a></td>
+    <td><p>Bernardo Mielki</p></td>
+   </tr>
     <tr><a href="https://github.com/brgarcias"><img src="https://avatars.githubusercontent.com/u/56596868?s=460&u=22a2921500cee9d2f170f9ba7694d56d9ccca763&v=4" alt="profile-github-bruno" height=120 width=120 border="0"></a>
     <p>Bruno Garcia</p></tr>
     <tr><a href="https://github.com/rmkarato"><img src="https://avatars.githubusercontent.com/u/63520542?s=400&u=d365844d2ffe2c1b3ea763d3967e1d33bd751ee1&v=4" alt="profile-github-renata" height=120 width=120 border="0"></a>
