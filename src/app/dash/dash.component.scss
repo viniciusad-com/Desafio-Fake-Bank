@@ -9,11 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
-
-.logo-container {
-  position: relative;
-  top: -35px;
+  overflow-x: none;
 }
 
 .sidenav {
@@ -24,51 +20,62 @@ body {
   top: 0;
   left: 0;
   background-color: #63DC3F;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding: 50px 10px 0;
-}
-
-.sidenav a {
-  text-decoration: none;
-  font-size: 14px;
-  color: #fff;
-  display: block;
-}
-
-.types-container {
-  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.types {
-  width: 91px;
-  height: 91px;
-  margin-left: 20px;
+.sidenav-logo {
   margin-bottom: 20px;
-  background-color: #8c52e5;
+}
+
+.sidenav-menu {
+  width: 70%;
+  height: 70px;
+  margin-top: 20px;
   border-radius: 5px;
-  align-items: flex-end;
+  background-color:#8C52E5;
   display: flex;
-  justify-content: left;
-  align-items: flex-end;
-  box-sizing: border-box;
-  padding: 0 0 12px 4px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
-.types:hover {
-  cursor: pointer;
+.sidenav-menu:hover {
   background-color: #9e5eff;
-  transition: 275ms ease-in-out;
 }
 
-.pix {
-  position: absolute;
-  background-color: transparent;
-  height: 25px;
-  padding-left: 28px;
-  padding-top: 15px;
-  cursor: pointer;
+.sidenav-menu a {
+  color: #fff;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
 }
+
+.sidenav-logout {
+  position: absolute;
+  bottom: 50px;
+  width: 70%;
+  height: 70px;
+  background-color:#8C52E5;
+  border-radius: 5px;
+}
+
+.sidenav-logout:hover {
+  background-color: #9e5eff;
+}
+
+.sidenav-logout button {
+  width: 100%;
+  height: 100%;
+  background-color:transparent;
+  color: #fff;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  border-style: none;
+}
+
 
 .welcome-text {
   display: flex;
@@ -83,7 +90,7 @@ body {
 }
 
 .main {
-  margin: -100px 0 0 150px;
+  margin: 0 0 0 150px;
   box-sizing: border-box;
 }
 
@@ -98,8 +105,8 @@ body {
 .transacoes-card {
   box-sizing: border-box;
   overflow: hidden;
-  width: 98%;
-  margin: 35px;
+  width: 90%;
+  margin-left: 20px;
 }
 
 .card-body img {
@@ -158,4 +165,45 @@ body {
 .lancamento h6 {
   font-size: 16px;
   font-weight: bold;
+}
+
+
+@media (max-width: 1100px) {
+  .card-group {
+    flex-direction: column;
+  }
+
+  .welcome-text {
+    flex-direction: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .main {
+    margin-left: 40px;
+  }
+
+  .sidenav {
+    width: 40px;
+  }
+
+  .sidenav img {
+    display: none;
+  }
+
+  .sidenav-menu {
+    transform: rotate(270deg);
+    height: 30px;
+    width: 90px;
+    margin-top: 70px;
+  }
+
+  .sidenav-logout {
+    transform: rotate(270deg);
+    height: 30px;
+    width: 90px;
+  }
+
+
 }
