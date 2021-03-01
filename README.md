@@ -1,27 +1,10 @@
-# HelloWorld
+# NuFake 💵
+## Fake Bank | Projeto Proposto pela Gama Academy Accenture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+## Colaboradores 🎇
 
-## Development server
+<div align="center">
+  
+<a href="https://github.com/rmkarato"><img src="https://avatars.githubusercontent.com/u/63520542?s=400&u=d365844d2ffe2c1b3ea763d3967e1d33bd751ee1&v=4" alt="profile-github" border="0"></a>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+</div>
