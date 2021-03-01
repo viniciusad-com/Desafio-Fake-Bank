@@ -754,8 +754,6 @@ export class DashComponent implements OnInit {
   ngOnInit(): void {
 
     this.validateCredentials();
-    console.log(this.session);
-    console.log(this.session.token);
     this.checkDashboard();
   }
 
@@ -787,14 +785,12 @@ export class DashComponent implements OnInit {
   
 
   onSuccess(response: any) {
-    console.log(&#x27;VERRRRRRRRRRRRRR&#x27;, response);
     this.dashboard &#x3D; response;
 
   }
 
 
   onError(error: any) {
-    console.log(error)
   }
 
   countBankValue(contaDto: ContaDto) {

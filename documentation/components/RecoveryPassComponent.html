@@ -820,7 +820,6 @@ export class RecoveryPassComponent implements OnInit {
   }
 
   onSuccess(response: Sessao) {
-    console.log(response)
     this.authService.setSession(response)
      this.authService.setToken(response.token)
      this.isError &#x3D; false;
@@ -832,7 +831,6 @@ export class RecoveryPassComponent implements OnInit {
 
     onError(error: any) {
      this.isError &#x3D; true;
-     console.log(error);
    } 
 
   checkLogin() {

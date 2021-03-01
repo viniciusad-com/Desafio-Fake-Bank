@@ -81,7 +81,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSuccess(response: Sessao) {
-    console.log(response)
     this.authService.setSession(response)
     this.authService.setToken(response.token)
     this.isError = false;

@@ -59,13 +59,11 @@ export class RecoveryPassComponent implements OnInit {
   }
   
   onSuccess(response: any) {
-    console.log(response)
     this.isError = false;
    }
 
   onError(error: any) {
     this.isError = true;
-    console.log(error);
     this.alertService.error('', error.error.error)
   } 
 

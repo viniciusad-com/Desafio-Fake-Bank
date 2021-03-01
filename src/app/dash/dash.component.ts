@@ -65,7 +65,6 @@ export class DashComponent implements OnInit {
   }
 
   onError(error: any) {
-    console.log(error)
   }
 
   countBankValue(contaDto: ContaDto) {

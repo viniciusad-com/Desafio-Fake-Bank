@@ -59,7 +59,6 @@ export class TemporaryPassComponent implements OnInit {
   }
 
   onSuccess(response: any) {
-    console.log(response);
     this.authService.setTemporaryPass(response);
  
     this.isError = false;
@@ -69,7 +68,6 @@ export class TemporaryPassComponent implements OnInit {
 
   onError(error: any) {
     this.isError = true;
-    console.log(error);
     this.alertService.error('', error.error.error)
   } 
 

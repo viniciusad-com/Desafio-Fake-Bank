@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.validateAllForms();
-    console.log(this.signInForm)
 
     if (this.signInForm.invalid) {
       return;
@@ -78,7 +77,6 @@ export class HomeComponent implements OnInit {
       usuario: this.signInForm.value.login
 
     }
-    console.log(this.signInForm)
     this.homeService.signIn(this.signInForm.value)
       .pipe(
         take(1),
@@ -91,7 +89,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSuccess(response: any) {
-    console.log(response)
     this.isError = false;
     this.authService.setLogin(this.login);
 
