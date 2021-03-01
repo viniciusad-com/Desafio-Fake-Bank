@@ -2,6 +2,7 @@
 ## Fake Bank | Projeto Proposto pela Gama Academy Accenture
 
 <div align="center"><img src="https://i.ibb.co/pPpgd4V/logo-gama-academy-horizontal.png" alt="logo-gama-academy" border="0"></div>
+<div align="center"><img src="https://i.ibb.co/RBQ788B/SectionA.png" alt="SectionA" border="0"></div>
 
 ## Sobre o Projeto 🏦
 
