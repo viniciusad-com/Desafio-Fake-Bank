@@ -1,7 +1,7 @@
 # NuFake 💵 | Equipe HeloWorld 🌍
 ## Fake Bank | Projeto Proposto pela Gama Academy Accenture
 
-<img src="https://i.ibb.co/pPpgd4V/logo-gama-academy-horizontal.png" alt="logo-gama-academy" border="0" align="center">
+<center><img src="https://i.ibb.co/pPpgd4V/logo-gama-academy-horizontal.png" alt="logo-gama-academy" border="0"></center>
 
 ## Sobre o Projeto 🏦
 
