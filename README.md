@@ -28,13 +28,31 @@
 
 > <a href="https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/p">API no Swagger</a>
  
-## Como instalar
+## Como Instalar a Aplicação
 
   * Faça download ou clone este repositório:
   
   ```
   git clone https://github.com/viniciusad-com/Desafio-Fake-Bank.git
   ```
+  
+  * Dentro do repositório, instale as dependências com o seguinte comando:
+
+  ```
+  npm install
+  ```
+
+## Para Rodar a Aplicação
+  
+  * Execute no terminal o seguinte comando:
+  
+  ```
+  ng serve
+  ```
+  
+  * Acesse no navegador através do endereço
+
+  > http://localhost:4200
 
 ## Deploy da Aplicação 💻
 
